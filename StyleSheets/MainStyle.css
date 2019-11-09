@@ -1,0 +1,39 @@
+.footer{
+    background-color: #efb259;
+}
+
+.bg-pale{
+    background-color: #fff !important;
+}
+
+.card-deck .card {
+    max-width: calc(25% - 30px);
+}
+
+.cards {
+   display: flex;
+   justify-content: space-around;
+}
+
+.navbar-nav .nav-item:hover{
+    background-color: #f54336 !important;
+}
+
+.active{
+    background-color: grey !important;
+}
+
+#searchIcon{
+    display:block;
+    text-align:center;
+}
+
+#dropdownMenuButton:hover{
+    background-color: #f54336 !important;
+}
+
+#dropdownMenuButton:focus{
+    background-color: #dc3545 !important;
+    border: 0 !important;
+    box-shadow: 0 !important;
+}
