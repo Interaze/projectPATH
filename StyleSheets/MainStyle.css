@@ -1,0 +1,77 @@
+.bg-pale{
+    background-color: #fff !important;
+}
+
+.card-deck .card {
+    max-width: calc(25% - 30px);
+}
+
+.cards {
+   display: flex;
+   justify-content: space-around;
+}
+
+.navbar-nav .nav-item:hover{
+    background-color: #FFFFFF !important;
+}
+
+.navbar-nav .dropwdown-menu:hover{
+    background-color: #FFFFFF !important;
+}
+
+.navbar-nav .nav-item:hover .nav-link{
+    color: black !important;
+}
+
+.active{
+    background-color: #f54336 !important;
+}
+
+#searchIcon{
+    display:block;
+    text-align:center;
+}
+
+@media (min-width: 992px) {
+    .col-lg-3 {
+        flex: 0 0 31% !important;
+        max-width: 31% !important;
+    }
+}
+
+.dropdown-menu{
+    width:100%;
+}
+
+.card{
+    border-width: 2px !important;
+    border-radius: 0 !important;
+    transition: 0.4s !important;
+
+}
+
+.modal-header{
+    border-color: #c7c7c7 !important;
+}
+
+.modal-footer{
+    border-color: #c7c7c7 !important;
+}
+
+.card-body{
+    border-top: 2px solid gray !important;*/
+    border-radius: 0 !important;
+}
+
+.btn-primary:active{
+    background-color: #f54336 !important;
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.5) !important;
+}
+
+.btn-primary:hover{
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.5) !important;
+}
+
+.redFocus:focus {
+    box-shadow: 0 0 0 3px rgba(255, 0, 0, 0.5) !important;
+}
