@@ -10,6 +10,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script src="JavaScript/Card.js"></script>
 </head>
 <body>
     <nav class="navbar navbar-expand-sm navbar-dark bg-primary sticky-top p-0">
@@ -18,7 +19,7 @@
     </button>
 
     <!-- Brand -->
-    <a class="navbar-brand p-4 m-0" href="javascript:void(0);">Logo</a>
+    <a class="navbar-brand p-3 m-0" href="javascript:void(0);">Logo</a>
 
     <!-- Links -->
     <div class="navbar-collapse collapse w-100 dual-collapse2 order-1 order-md-0" id="nav-content">
@@ -27,15 +28,14 @@
           <a class="nav-link pl-4 pr-4 pt-4 pb-4 text-decoration-none" href="javascript:void(0);">Build a Graph</a>
         </li>
         <li class="nav-item dropdown">
-            <button class="nav-link pl-4 pr-4 pt-4 pb-4 bg-primary text-secondary border-0 dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Learn An Algorithm
-            </button>
+            <a class="nav-link pl-4 pr-4 pt-4 pb-4 text-decoration-none dropdown-toggle" href="javascript:void(0);" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Learn and Algorithm</a>
+
             <div class="dropdown-menu border-0 rounded-0 bg-primary text-secondary" aria-labelledby="dropdownMenuButton">
-              <a class="dropdown-item rounded-0 bg-primary text-secondary disabled"><u>Path Finding</u></a>
+              <a class="dropdown-item rounded-0 bg-primary text-secondary font-weight-bold disabled"><u>Path Finding</u></a>
               <a class="dropdown-item rounded-0 bg-primary text-decoration-none text-secondary" href="#">BFS</a>
               <a class="dropdown-item rounded-0 bg-primary text-decoration-none text-secondary" href="#">DFS</a>
               <div class="dropdown-divider background-color-warning"></div>
-              <a class="dropdown-item rounded-0 bg-primary text-secondary disabled"><u>Tree Sorting</u></a>
+              <a class="dropdown-item rounded-0 bg-primary text-secondary font-weight-bold disabled"><u>Tree Sorting</u></a>
               <a class="dropdown-item rounded-0 bg-primary text-decoration-none text-secondary" href="#">Prim's</a>
               <a class="dropdown-item rounded-0 bg-primary text-decoration-none text-secondary" href="#">Kruskal's</a>
             </div>
@@ -56,51 +56,51 @@
     </nav>
     <div class="container bg-pale p-3">
         <h3>Search:</h3>
-        <input class="form-control" type="text" placeholder="Search" aria-label="Search">
+        <input class="form-control redFocus" type="text" placeholder="Search" aria-label="Search">
         <h1 class="mt-4 mb-4"><i class="fa fa-fire-alt" aria-hidden="true"></i> <u>Trending Graphs:</u></h1>
         <div class="cards d-flex align-content-end flex-wrap">
-        <div class="card m-3 col-lg-3 col-md-5 bg-pale p-0">
-            <img class="card-img-top" src="..." alt="Card image cap">
+        <div class="card hvr mt-3 mb-3 m-3 col-lg-3 col-md-5 bg-pale p-0">
+            <img class="card-img-top" src="https://dummyimage.com/4:3x1080/ffffff/ff0000.png" alt="Card image cap">
             <div class="card-body bg-pale p-4">
             <h5 class="card-title">Card title</h5>
                 <p class="card-text">Quick sample text to create the card title and make up the body of the card's content.</p>
                 <a href="#" class="btn btn-primary">Go somewhere</a>
             </div>
         </div>
-        <div class="card m-3 col-lg-3 col-md-5 bg-pale p-0" col-md-4>
-            <img class="card-img-top" src="..." alt="Card image cap">
+        <div class="card hvr mt-3 mb-3 m-3 col-lg-3 col-md-5 bg-pale p-0" col-md-4>
+            <img class="card-img-top" src="https://dummyimage.com/4:3x1080/ffffff/ff0000.png" alt="Card image cap">
             <div class="card-body bg-pale p-4">
             <h5 class="card-title">Card title</h5>
                 <p class="card-text">Quick sample text to create the card title and make up the body of the card's content.</p>
                 <a href="#" class="btn btn-primary">Go somewhere</a>
             </div>
         </div>
-        <div class="card m-3 col-lg-3 col-md-5 bg-pale p-0">
-            <img class="card-img-top" src="..." alt="Card image cap">
-            <div class="card-bodybg-pale p-4">
-            <h5 class="card-title">Card title</h5>
-                <p class="card-text">Quick sample text to create the card title and make up the body of the card's content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-        </div>
-        <div class="card m-3 col-lg-3 col-md-5 bg-pale p-0">
-            <img class="card-img-top" src="..." alt="Card image cap">
+        <div class="card hvr mt-3 mb-3 m-3 col-lg-3 col-md-5 bg-pale p-0">
+            <img class="card-img-top" src="https://dummyimage.com/4:3x1080/ffffff/ff0000.png" alt="Card image cap">
             <div class="card-body bg-pale p-4">
             <h5 class="card-title">Card title</h5>
                 <p class="card-text">Quick sample text to create the card title and make up the body of the card's content.</p>
                 <a href="#" class="btn btn-primary">Go somewhere</a>
             </div>
         </div>
-        <div class="card m-3 col-lg-3 col-md-5 bg-pale p-0">
-            <img class="card-img-top" src="..." alt="Card image cap">
+        <div class="card hvr mt-3 mb-3 m-3 col-lg-3 col-md-5 bg-pale p-0">
+            <img class="card-img-top" src="https://dummyimage.com/4:3x1080/ffffff/ff0000.png" alt="Card image cap">
             <div class="card-body bg-pale p-4">
             <h5 class="card-title">Card title</h5>
                 <p class="card-text">Quick sample text to create the card title and make up the body of the card's content.</p>
                 <a href="#" class="btn btn-primary">Go somewhere</a>
             </div>
         </div>
-        <div class="card m-3 col-lg-3 col-md-5 bg-pale p-0">
-            <img class="card-img-top" src="..." alt="Card image cap">
+        <div class="card hvr mt-3 mb-3 m-3 col-lg-3 col-md-5 bg-pale p-0">
+            <img class="card-img-top" src="https://dummyimage.com/4:3x1080/ffffff/ff0000.png" alt="Card image cap">
+            <div class="card-body bg-pale p-4">
+            <h5 class="card-title">Card title</h5>
+                <p class="card-text">Quick sample text to create the card title and make up the body of the card's content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
+        <div class="card hvr mt-3 mb-3 m-3 col-lg-3 col-md-5 bg-pale p-0">
+            <img class="card-img-top" src="https://dummyimage.com/4:3x1080/ffffff/ff0000.png" alt="Card image cap">
             <div class="card-body bg-pale p-4">
             <h5 class="card-title">Card title</h5>
                 <p class="card-text">Quick sample text to create the card title and make up the body of the card's content.</p>
