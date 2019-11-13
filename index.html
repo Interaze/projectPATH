@@ -1,16 +1,19 @@
 <html lang="en">
 <head>
-  <title>index</title>
+  <title>Home</title>
+
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-   <link rel="stylesheet" href="StyleSheets/MainStyle.css">
+  <link rel="stylesheet" href="StyleSheets/MainStyle.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="StyleSheets/custom-css-bootstrap-magic-2019-11-09.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
   <script src="JavaScript/Card.js"></script>
+
 </head>
 <body>
 
@@ -19,9 +22,6 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h2 class="modal-title">Log In</h2>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                    </button>
                 </div>
             <div class="modal-body">
 
@@ -49,9 +49,6 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h2 class="modal-title">Sign Up</h2>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                    </button>
                 </div>
             <div class="modal-body">
 
@@ -126,9 +123,14 @@
     </div>
     </nav>
     <div class="container bg-pale p-3">
-        <h3>Search:</h3>
-        <input class="form-control redFocus" type="text" placeholder="Search" aria-label="Search">
-        <h1 class="mt-4 mb-4"><i class="fa fa-fire-alt" aria-hidden="true"></i> <u>Trending Graphs:</u></h1>
+        <h2>Find A Graph:</h2>
+        <form class="form-inline my-2 my-lg-0">
+            <input class="form-control redFocus col-lg-10 col-md-8 col-sm-7" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-danger my-2 col-lg-2 col-md-4 col-sm-5" type="submit">Search</button>
+        </form>
+        <h1 class="display-4 mt-4 mb-4"><i class="fa fa-fire-alt" aria-hidden="true"></i>
+            <u>Trending Graphs:</u>
+        </h1>
         <div class="cards d-flex align-content-end flex-wrap col-lg-11 mx-auto">
         <div class="card hvr mt-3 mb-3 m-1 col-lg-3 col-md-5 bg-pale p-0">
             <img class="card-img-top" src="https://dummyimage.com/4:3x1080/ffffff/ff0000.png" alt="Card image cap">
