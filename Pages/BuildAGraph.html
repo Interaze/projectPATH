@@ -57,7 +57,7 @@
     svg.append('defs').append('marker')
         .attrs({'id':'arrowhead',
             'viewBox':'-0 -5 10 10',
-            'refX':20,
+            'refX':17,
             'refY':0,
             'opacity': 0.9,
             'orient':'auto',
@@ -70,9 +70,8 @@
         .style('stroke','none');
 
         var simulation = d3.forceSimulation()
-            .force("link", d3.forceLink().id(function (d) {return d.id;}).distance(100).strength(1))
-            .force("charge", d3.forceManyBody())
-            .force("center", d3.forceCenter(width / 2, height / 2));
+            .force("link", d3.forceLink().id(function (d) {return d.id;}).distance(150).strength(.5))
+            .force("charge", d3.forceManyBody());
 
     d3.json("../TestData/test.json", function (error, graph) {
         if (error) throw error;
@@ -135,15 +134,19 @@
 
                 node.append("circle")
                     .attr("r", 15)
-                    .style("fill", "#000")
+                    .style("fill", "#f54336")
 
                 node.append("title")
                     .text(function (d) {return d.id;});
 
                 node.append("text")
-                    .attr("dy", -3)
-                    .text(function (d) {return d.name+":"+d.label;});
+                    .attr("dy", 5.5)
+                    .attr("dx", -5)
+                    .style("user-select","none")
+                    .style("fill","#000")
+                    .text(function (d) {return d.name;});
 
+                    //.text(function (d) {return d.name+":"+d.label;});
                 simulation
                     .nodes(nodes)
                     .on("tick", tick);//try changing
