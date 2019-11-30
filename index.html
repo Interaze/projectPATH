@@ -28,11 +28,11 @@
             <form>
             <div class="form-group">
                 <label for="userName">Username</label>
-                <input type="text" class="form-control redFocus" id="userName" aria-describedby="emailHelp" placeholder="Username">
+                <input type="text" class="form-control redFocus" id="userName" aria-describedby="emailHelp" placeholder="Username"  required>
             </div>
             <div class="form-group">
                 <label for="password">Password</label>
-                <input type="password" class="form-control redFocus" id="password" placeholder="Password">
+                <input type="password" class="form-control redFocus" id="password" placeholder="Password"  required>
             </div>
             </div>
             <div class="modal-footer">
@@ -43,7 +43,6 @@
             </div>
         </div>
     </div>
-
     <div class="modal fade" tabindex="-1" role="dialog" id="signUp">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
@@ -55,20 +54,20 @@
             <form>
             <div class="form-group">
                 <label for="userName">Username</label>
-                <input type="text" class="form-control redFocus" name="Username" id="userName" aria-describedby="userName" placeholder="Username">
+                <input type="text" class="form-control redFocus" name="Username" id="userName" aria-describedby="userName" placeholder="Username"  required>
             </div>
             <div class="form-group">
                 <label for="Email">Email address</label>
-                <input type="email" class="form-control redFocus" name="Email" id="Email" aria-describedby="email" placeholder="Enter email">
-                <small id="emailDescription" class="form-text text-muted">Your password will only be used on this site.</small>
+                <input type="email" class="form-control redFocus" name="Email" id="Email" aria-describedby="email" placeholder="Enter email" required>
+                <small id="emailDescription" class="form-text text-muted">Your email will only be used on this site.</small>
             </div>
             <div class="form-group">
                 <label for="exampleInputPassword1">Password</label>
-                <input type="password" class="form-control redFocus" name="Password" id="exampleInputPassword1" placeholder="Password">
+                <input type="password" class="form-control redFocus" name="Password" id="exampleInputPassword1" placeholder="Password"  required>
             </div>
             <div class="form-group">
                 <label for="Confirmation">Confirm Password</label>
-                <input type="password" class="form-control redFocus" name="Confirmation" id="Confirmation" placeholder="Confirm Password">
+                <input type="password" class="form-control redFocus" name="Confirmation" id="Confirmation" placeholder="Confirm Password"  required>
             </div>
 
             </div>
@@ -133,6 +132,14 @@
         </h1>
         <div class="cards d-flex align-content-end flex-wrap col-lg-11 mx-auto">
         <div class="card hvr mt-3 mb-3 m-1 col-lg-3 col-md-5 bg-pale p-0">
+            <img class="card-img-top" src="https://dummyimage.com/4:3x1080/ffffff/ff0000.png" alt="Card image cap">
+            <div class="card-body bg-pale p-4">
+            <h5 class="card-title">Card title</h5>
+                <p class="card-text">Quick sample text to create the card title and make up the body of the card's content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
+        <div class="card hvr mt-3 mb-3 m-1 col-lg-3 col-md-5 bg-pale p-0" col-md-4>
             <img class="card-img-top" src="https://dummyimage.com/4:3x1080/ffffff/ff0000.png" alt="Card image cap">
             <div class="card-body bg-pale p-4">
             <h5 class="card-title">Card title</h5>
