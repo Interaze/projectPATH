@@ -15,156 +15,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
-    <style type="text/css">
-        body{
-            background-color: #d4d4d4 !important
-        }
-
-        .node {
-            opacity: .98
-        }
-
-        .link {
-            stroke: #000; stroke-opacity: .6; stroke-width: 3px;
-        }
-
-        .node circle {
-            stroke: #000;
-            stroke-width: 2px;
-        }
-
-        .options {
-            position: absolute;
-            z-index: 10;
-            top: 50%;
-            transform: translate(0, -50%);
-        }
-
-        .algorithm {
-            width: 300px;
-            right: 7px;
-            top: 80px;
-            z-index: 10;
-        }
-
-        .icon{
-            text-align: center;
-            width: 25px;
-        }
-
-        .fa-check-circle{
-            color: green;
-        }
-
-        .fa-times{
-            color: red;
-        }
-
-        .fa-ban{
-            color: red;
-            font-size: 18px;
-            margin: 2px;
-        }
-
-        .fa-question-circle{
-            color: #405fff;
-        }
-
-        .list-group .btn{
-            background-color: #060606;
-            -webkit-box-shadow: none !important;
-        	-moz-box-shadow: none !important;
-        	box-shadow: none !important;
-        }
-
-        .side-icon:active{
-            background-color: #2d2d2d !important;
-        }
-
-
-        .algorithm .card{
-            border: 2px solid #545353 !important;
-            border-radius: 2px !important;
-        }
-
-        .algorithm .card .card-body{
-            border: none !important;
-        }
-
-        .requirements p{
-            font-size: 18px;
-            margin: 2px;
-        }
-
-        .logo{
-            width: 48px;
-            fill: white;
-            margin: 6px !important;
-            user-drag: none;
-            user-select: none;
-            -moz-user-select: none;
-            -webkit-user-drag: none;
-            -webkit-user-select: none;
-            -ms-user-select: none;
-        }
-
-        .side-icon{
-            position: relative;
-            height: 80px !important;
-            width: 80px !important;
-            border-left: 1px solid grey;
-        }
-
-        .fa-lg{
-            font-size: 1.45em !important;
-        }
-
-        .side-icon i{
-            margin: 0;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
-
-        .side-icon h4{
-            margin: 0;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
-
-        .list-group-item h3{
-            position: absolute;
-            top: 50%;
-            margin-left: 10px;
-            transform: translate(0%, -50%);
-        }
-
-        .list-group-item .btn-primary{
-            background-color: #0c0c0c;
-            box-shadow: none !important;
-        }
-
-        .tab{
-            background-color: grey;
-            margin: 0 !important;
-        }
-
-        .options .active{
-            background-color: #2d2d2d !important;
-        }
-
-        #diagram{
-            width: 100vw;
-            height: calc(100vh - 75px);;
-            background-color: #f7f7f7;
-            margin: 0;
-            padding: 0;
-        }
-    </style>
-
+    <link rel="stylesheet" href="../StyleSheets/UI.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body onresize="setDimensions()" onload="setDimensions()">
@@ -187,9 +38,10 @@
                 <input type="password" class="form-control redFocus" id="password" placeholder="Password" required>
             </div>
             </div>
-            <div class="modal-footer">
-                <button type="submit" class="btn btn-primary">Sign In</button>
-                <button type="button" class="btn btn-secondary " data-dismiss="modal">Cancel</button>
+            <div class="modal-footer d-block w-100">
+                <button type="button" class="btn btn-danger float-left" onclick="showSignUp()">Sign Up</button>
+                <button type="button" class="btn btn-secondary float-right" data-dismiss="modal">Cancel</button>
+                <button type="submit" class="btn btn-primary float-right" data-dismiss="modal">Sign In</button>
             </div>
             </form>
             </div>
@@ -268,9 +120,6 @@
           <li class="nav-item">
               <a class="nav-link pl-4 pr-4 pt-4 pb-4 text-decoration-none" data-toggle="modal" data-target="#logIn">Log In</a>
           </li>
-          <li class="nav-item">
-              <a class="nav-link pl-4 pr-4 pt-4 pb-4 text-decoration-none" data-toggle="modal" data-target="#signUp">Sign Up</a>
-          </li>
       </ul>
     </div>
     </nav>
@@ -322,445 +171,51 @@
     </div>
 
     <div class="algorithm position-fixed">
-    <div class="card">
-    <div class="card-header">
-        Testing Console
-    </div>
-    <div class="card-body">
-        <h5 class="card-title">Special title treatment</h5>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <select class="form-control form-control mb-2">
-            <option>Select an Algorithm</option>
-            <option disabled>───General Traversal───</option>
-            <option>BFS</option>
-            <option>DFS</option>
-            <option disabled>────Shortest Path────</option>
-            <option>Kruskal</option>
-            <option>Prim's</option>
-        </select>
-        <button type="submit" class="btn btn-danger" disabled>Run Algorithm</button>
-    </div>
-    <div class="card-footer text-muted">
-        Last Saved: 2 minutes ago
-    </div>
-    </div>
+        <div class="card">
+            <div class="card-header">
+                Testing Console
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Special title treatment</h5>
+                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                <select class="form-control form-control mb-2">
+                    <option>Select an Algorithm</option>
+                    <option disabled>───General Traversal───</option>
+                    <option>BFS</option>
+                    <option>DFS</option>
+                    <option disabled>────Shortest Path────</option>
+                    <option>Kruskal</option>
+                    <option>Prim's</option>
+                </select>
+                <button type="submit" class="btn btn-danger" disabled>Run Algorithm</button>
+            </div>
+            <div class="card-footer text-muted">
+                Last Saved: 2 minutes ago
+            </div>
+        </div>
 
-    <div class="card mt-2">
-    <div class="card-header">
-        Graph Requirements
-    </div>
-    <div class="card-body requirements">
-        <h5 class="card-title mb-1 font-underline"><u>Current Requirements:</u></h5>
-        <p><span class="icon fa fa-check-circle"></span> Is Acyclic</p>
-        <p><span class="icon fa fa-times"></span> Is a directed graph</p>
-        <p><span class="icon fa fa-question-circle"></span> Is something</p>
-    </div>
-    </div>
+        <div class="card mt-2">
+            <div class="card-header">
+                Graph Requirements
+            </div>
+            <div class="card-body requirements overflow-auto" id="Requirements">
+                <h5 class="card-title mb-1 font-underline"><u>Current Requirements:</u></h5>
+                <p><span class="icon fa fa-check-circle"></span> Is Acyclic</p>
+                <p><span class="icon fa fa-times"></span> Is a directed graph</p>
+                <p><span class="icon fa fa-question-circle"></span> Is something</p>
+                <p><span class="icon fa fa-times"></span> Is a directed graph</p>
+                <p><span class="icon fa fa-question-circle"></span> Is something</p>
+            </div>
+        </div>
     </div>
 
     <svg id="diagram"></svg>
 
     <script src="https://d3js.org/d3.v4.min.js" type="text/javascript"></script>
     <script src="https://d3js.org/d3-selection-multi.v1.js"></script>
-
-    <script type="text/javascript">
-
-    $( "#diagram" ).click(function() {
-        UI();
-    });
-
-    var svg = d3.select("svg");
-
-    var width = document.getElementById("diagram").clientWidth,
-    height = document.getElementById("diagram").clientHeight,
-    radius = 6;
-
-    svg.append('defs').append('marker')
-        .attrs({'id':'arrowhead',
-            'viewBox':'-0 -5 10 10',
-            'refX':17,
-            'refY':0,
-            'opacity': 0.9,
-            'orient':'auto',
-            'markerWidth':6,
-            'markerHeight':6,
-            'xoverflow':'visible'})
-        .append('svg:path')
-        .attr('d', 'M 0,-5 L 10 ,0 L 0,5')
-        .attr('fill', '#000')
-        .attr("viewBox", [0, 0, width, height])
-        .style('stroke','none');
-
-        var body = d3.select("body");
-        var GlobalGraph;
-
-        body.call(d3.zoom()
-            .extent([[0, 0], [width, height]])
-            .scaleExtent([1, 2])
-            .translateExtent([[-312,-312], [width + 312, height + 312]])
-            .on("zoom", zoomed));
-
-        function zoomed() {
-            svg.attr("transform", d3.event.transform);
-        }
-
-    var simulation = d3.forceSimulation()
-        .force("link", d3.forceLink().id(function (d) {return d.id;}).distance(150).strength(1))
-        .force("charge", d3.forceManyBody())
-        .force("center", d3.forceCenter(width / 2, height / 2));
-
-    d3.json("../TestData/test.json", function (error, graph) {
-        if (error) throw error;
-        GlobalGraph = graph;
-        render(graph);
-    });
-
-function render(graph){
-    links = graph.links;
-    nodes = graph.nodes;
-    var promise = new Promise(function(resolve, reject){
-        console.log(links);
-        console.log(nodes);
-        link = svg.selectAll(".link")
-            .data(links)
-            .enter()
-            .append("line")
-            .attr("class", "link")
-            .attr("onmouseover", function (d) {return "setSelEdge(\""+d.source+"to"+d.target+"\")"})
-            .attr("onmouseout", "setSelEdge(null)")
-            .attr("source", function (d) {return d.source})
-            .attr("target", function (d) {return d.target})
-            .attr("id", function (d) {return d.source+"to"+d.target})
-            .attr('marker-end','url(#arrowhead)');
-
-        link
-            .append("title")
-            .text(function (d) {return d.type;});
-
-        edgepaths = svg.selectAll(".edgepath")
-            .data(links)
-            .enter()
-            .append('path')
-            .attr("source", function (d) {return d.source})
-            .attr("target", function (d) {return d.target})
-            .attrs({
-                    'class': 'edgepath',
-                    'fill-opacity': 0,
-                    'stroke-opacity': 0,
-                    'id': function (d, i) {return 'edgepath' + i}
-                })
-            .style("pointer-events", "none");
-
-        edgelabels = svg.selectAll(".edgelabel")
-            .data(links)
-            .enter()
-            .append('text')
-            .attr("source", function (d) {return d.source})
-            .attr("target", function (d) {return d.target})
-            .style("pointer-events", "none")
-            .attrs({
-                'class': 'edgelabel',
-                'id': function (d, i) {return 'edgelabel' + d.source + "to" + d.target},
-                'font-size': 10,
-                'fill': '#000'
-            });
-
-        edgelabels
-            .append('textPath')
-            .attr('xlink:href', function (d) {return '#edgepath' + d.source + "to" + d.target})
-            .style("text-anchor", "middle")
-            .style("pointer-events", "none")
-            .attr("startOffset", "50%")
-            .text(function (d) {return d.type});
-
-        node = svg
-            .selectAll(".node")
-            .data(nodes)
-            .enter()
-            .append("g")
-            .attr("class", "node")
-            .style("fill", "#f44336")
-            .style("border","#000")
-            .attr("onmouseover", function (d) {return "setSelVertex(\""+d.id+"\")"})
-            .attr("onmouseout", "setSelVertex(null)")
-            .attr("id", function (d) {return "Vertex"+d.id})
-            .call(
-                d3.drag()
-                .on("start", dragstarted)
-                .on("drag", dragged)
-                );
-
-        node
-            .append("circle")
-            .attr("r", 15)
-            .style("fill", "#f54336")
-
-        node
-            .append("text")
-            .attr("dy", 5.5)
-            .attr("dx", -5)
-            .style("user-select","none")
-            .style("fill","#000")
-            .text(function (d) {return d.name;});
-
-        simulation
-            .nodes(nodes)
-            .on("tick", tick)
-            .force('link')
-            .links(graph.links);
-    });
-}
-
-    function tick() {
-        node
-            .attr("transform", function (d) {return "translate(" + Math.max(radius, Math.min(width - radius, d.x)) + ", " + Math.max(radius, Math.min(height - radius, d.y)) + ")";})
-            .attr("cx", function(d) { return d.x = Math.max(radius, Math.min(width - radius, d.x)); })
-            .attr("cy", function(d) { return d.y = Math.max(radius, Math.min(height - radius, d.y)); });
-
-        link
-            .attr("x1", function(d) { return d.source.x; })
-            .attr("y1", function(d) { return d.source.y; })
-            .attr("x2", function(d) { return d.target.x; })
-            .attr("y2", function(d) { return d.target.y; });
-
-            edgepaths.attr('d', function (d) {
-            return 'M ' + d.source.x + ' ' + d.source.y + ' L ' + d.target.x + ' ' + d.target.y;
-        });
-
-        edgelabels.attr('transform', function (d) {
-            if (d.target.x < d.source.x) {
-                var bbox = this.getBBox();
-
-                rx = bbox.x + bbox.width / 2;
-                ry = bbox.y + bbox.height / 2;
-                return 'rotate(180 ' + rx + ' ' + ry + ')';
-            }
-            else {
-                return 'rotate(0)';
-            }
-        });
-    }
-
-    function setNode(){
-
-    }
-
-    function setDimensions(){
-        width = document.getElementById("diagram").clientWidth;
-        height = document.getElementById("diagram").clientHeight;
-    }
-
-    function dragstarted(d) {
-        if (!d3.event.active) simulation.alphaTarget(1).restart();
-        d.fx = d.x;
-        d.fy = d.y;
-        d.fx = d3.event.x;
-        d.fy = d3.event.y;
-    }
-
-    function dragged(d) {
-        d.fx = d3.event.x;
-        d.fy = d3.event.y;
-    }
-
-    $(document).ready(function(){
-        $('[data-toggle="tooltip"]').tooltip();
-    });
-
-    function removeElement(elementId) {
-        // Removes an element from the document
-        var element = document.getElementById(elementId);
-        element.parentNode.removeChild(element);
-    }
-
-    function UI(){
-        var userMode = document.querySelector('input[name="options"]:checked').value;
-        switch (userMode) {
-            case "0":
-                console.log("Move");
-            break;
-            case "1":
-                addVertex();
-            break;
-            case "2":
-                if(!selVertex){
-                    alert("Please Select A Vertex");
-                }
-                else{
-                    removeVertex(selVertex);
-                }
-            break;
-            case "3":
-                console.log("Add A Edge");
-            break;
-            case "4":
-                if(!selEdge){
-                    alert("Please Select An Edge");
-                }
-                else{
-                    removeEdge(selEdge);
-                }
-
-            break;
-            default:
-                console.log("Default");
-                console.log(userMode);
-        }
-    }
-
-    function addVertex(){
-        nodes.push({"name": "96", "fx": 500, "fy": 500, "sticky": true});
-        update();
-    }
-
-    var isRunning = false;
-
-    function removeVertex(currVer){
-        //var localIndex;
-
-        /*
-        $("line[source='"+currVer+"']").remove();
-        $("line[target='"+currVer+"']").remove();
-
-        $("path[source='"+currVer+"']").remove();
-        $("path[target='"+currVer+"']").remove();
-
-        $("text[source='"+currVer+"']").remove();
-        $("text[target='"+currVer+"']").remove();
-
-        while((localIndex = GlobalGraph.links.findIndex(i => i.source.name == currVer)) != -1){
-            GlobalGraph.links.splice(localIndex,1);
-            console.log("remove out");
-        }
-        while((localIndex = GlobalGraph.links.findIndex(i => i.target.name == currVer)) != -1){
-            GlobalGraph.links.splice(localIndex,1);
-            console.log("remove in");
-        }
-
-        var localIndex = GlobalGraph.nodes.findIndex(i => i.id == currVer);
-        GlobalGraph.nodes.splice(localIndex,1)
-        removeElement("Vertex"+currVer);
-*/
-        //shiftNums();
-        var localIndex = GlobalGraph.nodes.findIndex(i => i.id == currVer);
-        GlobalGraph.nodes.splice(localIndex,1);
-        update(GlobalGraph);
-        console.log("splice("+ localIndex +",1) at currVer: "+ currVer);
-        setSelVertex(null)
-    }
-
-    /*function shiftNums(){
-        var flag = GlobalGraph.nodes.sort((a, b) => (a.id > b.id) ? 1 : -1);
-        if(flag == -1){
-            alert("Failed");
-        }
-        else{
-            alert("Sorted");
-        }
-        var max = GlobalGraph.nodes.length;
-        console.log("max is: " + max);
-
-        for(var i = 0; i < max; i++){
-            if(GlobalGraph.nodes[i].id != i+1){
-                var inm = i+1;
-                var strnm = ""+inm;
-                var temp = GlobalGraph.nodes[i].id
-                GlobalGraph.nodes[i].id = i+1;
-                GlobalGraph.nodes[i].name = strnm;
-
-                $("line[source='"+temp+"']").attr("source", i+1).attr("id");
-                $("line[target='"+temp+"']").attr("target", i+1);
-
-                $("path[source='"+temp+"']").attr("source", i+1);
-                $("path[target='"+temp+"']").attr("target", i+1);
-
-                $("text[source='"+temp+"']").attr("source", i+1);
-                $("text[target='"+temp+"']").attr("target", i+1);
-            }
-            else{
-                console.log("fine");
-            }
-        }
-        //update(GlobalGraph);
-    }*/
-
-function update(graph){
-links = graph.links;
-nodes = graph.nodes;
-var promise = new Promise(function(resolve, reject){
-
-    link = svg.selectAll(".link").remove().exit()
-        .data(links)
-        .enter()
-        .append("line")
-        .attr("class", "link")
-        .attr("onmouseover", function (d) {return "setSelEdge(\""+d.source+"to"+d.target+"\")"})
-        .attr("onmouseout", "setSelEdge(null)")
-        .attr("source", function (d) {return d.source})
-        .attr("target", function (d) {return d.target})
-        .attr("id", function (d) {return d.source+"to"+d.target})
-        .attr('marker-end','url(#arrowhead)');
-
-    link
-        .append("title")
-        .text(function (d) {return d.type;});
-
-    node = svg
-        .selectAll(".node").remove().exit()
-        .data(nodes)
-        .enter()
-        .append("g")
-        .attr("class", "node")
-        .style("fill", "#f44336")
-        .style("border","#000")
-        .attr("onmouseover", function (d) {return "setSelVertex(\""+d.id+"\")"})
-        .attr("onmouseout", "setSelVertex(null)")
-        .attr("id", function (d) {return "Vertex"+d.id})
-        .call(
-            d3.drag()
-            .on("start", dragstarted)
-            .on("drag", dragged)
-            );
-    node
-        .append("circle")
-        .attr("r", 15)
-        .style("fill", "#f54336")
-
-    node
-        .append("text")
-        .attr("dy", 5.5)
-        .attr("dx", -5)
-        .style("user-select","none")
-        .style("fill","#000")
-        .text(function (d) {return d.name;});
-        console.log(nodes);
-        console.log(links);
-});}
-
-    function removeEdge(currEdge){
-        //removeElement(currEdge);
-        //removeElement("edgelabel"+currEdge);
-        //removeElement("edgepath"+currEdge);
-        var localIndex = GlobalGraph.links.findIndex(i => i.id == currEdge);
-        GlobalGraph.links.splice(localIndex,1);
-        update(GlobalGraph);
-        setSelEdge(null);
-    }
-
-    var selVertex = null;
-    var selEdge = null;
-
-    function setSelVertex(currentVertex){
-        selVertex = currentVertex;
-    }
-
-    function setSelEdge(currentEdge){
-        selEdge = currentEdge;
-        console.log(selEdge);
-    }
-//http://techslides.com/save-svg-as-an-image
-</script>
-
-
+    <script src="../JavaScript/UI.js" type="text/javascript">
+    //http://techslides.com/save-svg-as-an-image
+    </script>
+    <script src="../JavaScript/Modals.js" type="text/javascript"></script>
 </body>
 </html>

@@ -1,0 +1,27 @@
+{
+    "Requirements": [
+    {
+        "is Acyclic": "required",
+        "is Directed": "required",
+        "Not Weighted": "required",
+        "Less Than 20 Nodes": "recommended"
+    },
+    ],
+    "Display": [
+    {
+        "Title": "BFS",
+        "Summary": "required",
+        "Details": "required",
+        "Less Than 20 Nodes": "recommended",
+        "Default Graph": "www.birdisthework1.com",
+    },
+    ],
+    "Links": [
+    {
+        "primary": "www.birdisthework1.com",
+        "secondary": "www.birdisthework2.com",
+        "secondary": "www.birdisthework3.com",
+        "image": "www.this.png"
+    },
+    ]
+}

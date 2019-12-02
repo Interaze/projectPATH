@@ -1,5 +1,174 @@
 /*UI.css*/
-
 body{
-    background-color: #F1EEEE;
+    background-color: #d4d4d4 !important
 }
+
+.node {
+    opacity: .98
+}
+
+.link {
+    stroke: #000; stroke-opacity: .6; stroke-width: 3px;
+}
+
+.node circle {
+    stroke: #000;
+    stroke-width: 2px;
+}
+
+.options {
+    position: absolute;
+    z-index: 10;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+
+.algorithm {
+    width: 300px;
+    right: 7px;
+    top: 80px;
+    z-index: 10;
+}
+
+.icon{
+    text-align: center;
+    width: 25px;
+}
+
+.fa-check-circle{
+    color: green;
+}
+
+.fa-times{
+    color: red;
+}
+
+.fa-ban{
+    color: red;
+    font-size: 18px;
+    margin: 2px;
+}
+
+.fa-question-circle{
+    color: #405fff;
+}
+
+.list-group .btn{
+    background-color: #060606;
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    box-shadow: none !important;
+}
+
+.side-icon:active{
+    background-color: #2d2d2d !important;
+}
+
+
+.algorithm .card{
+    border: 2px solid #545353 !important;
+    border-radius: 2px !important;
+}
+
+.algorithm .card .card-body{
+    border: none !important;
+}
+
+.requirements p{
+    font-size: 18px;
+    margin: 2px;
+}
+
+.logo{
+    width: 48px;
+    fill: white;
+    margin: 6px !important;
+    user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+.side-icon{
+    position: relative;
+    height: 80px !important;
+    width: 80px !important;
+    border-left: 1px solid grey;
+}
+
+.fa-lg{
+    font-size: 1.45em !important;
+}
+
+.side-icon i{
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.side-icon h4{
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.list-group-item h3{
+    position: absolute;
+    top: 50%;
+    margin-left: 10px;
+    transform: translate(0%, -50%);
+}
+
+.list-group-item .btn-primary{
+    background-color: #0c0c0c;
+    box-shadow: none !important;
+}
+
+.tab{
+    background-color: grey;
+    margin: 0 !important;
+}
+
+.options .active{
+    background-color: #2d2d2d !important;
+}
+
+#diagram{
+    width: 100vw;
+    height: calc(100vh - 75px);;
+    background-color: #f7f7f7;
+    margin: 0;
+    padding: 0;
+}
+
+#requirements{
+    max-height: 150px;
+    overflow-y: scroll;
+
+}
+
+#requirements::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+
+#requirements::-webkit-scrollbar:vertical {
+    width: 11px;
+}
+
+#requirements::-webkit-scrollbar:horizontal {
+    height: 11px;
+}
+
+#requirements::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    border: 2px solid white; /* should match background, can't be transparent */
+    background-color: rgba(0, 0, 0, .5);
+}
+
+/*https://codepen.io/stevenlewis/pen/hubpL*/
