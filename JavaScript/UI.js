@@ -53,8 +53,8 @@ function render(graph){
     links = graph.links;
     nodes = graph.nodes;
     var promise = new Promise(function(resolve, reject){
-        console.log(links);
-        console.log(nodes);
+        //console.log(links);
+        //console.log(nodes);
         link = svg.selectAll(".link")
             .data(links)
             .enter()
@@ -208,7 +208,7 @@ function render(graph){
         switch (userMode) {
             case "0":
                 settingEdge = false;
-                console.log("Move");
+                //console.log("Move");
             break;
             case "1":
                 settingEdge = false;
@@ -224,7 +224,7 @@ function render(graph){
                 }
             break;
             case "3":
-                console.log("Add A Edge");
+                //console.log("Add A Edge");
                 if(!selVertex){
                     alert("Please Select A Vertex");
                 }
@@ -243,8 +243,8 @@ function render(graph){
 
             break;
             default:
-                console.log("Default");
-                console.log(userMode);
+                //console.log("Default");
+                //console.log(userMode);
                 settingEdge = false;
         }
     }
@@ -263,7 +263,7 @@ function render(graph){
             }
             else{
                 fixNums();
-                console.log("Vertex " + firstEdge + " and " + secondEdge);
+                //console.log("Vertex " + firstEdge + " and " + secondEdge);
                 GlobalGraph.links.push({
                     source: GlobalGraph.nodes[firstEdge-1],
                     target: GlobalGraph.nodes[secondEdge-1],
@@ -272,7 +272,7 @@ function render(graph){
                 update(GlobalGraph);
                 firstEdge = 0;
                 secondEdge = 0;
-                console.log(GlobalGraph.links);
+                //console.log(GlobalGraph.links);
             }
         }
         else{
@@ -345,7 +345,7 @@ function render(graph){
     });}
 
     function fixNums(){
-        console.log(GlobalGraph.nodes);
+        //console.log(GlobalGraph.nodes);
         GlobalGraph.nodes.sort((a, b) => (a.id > b.id) ? 1 : -1);
 
         for(var i = 0; i < GlobalGraph.nodes.length; i++){
@@ -410,7 +410,7 @@ function render(graph){
 
     function setSelEdge(currentEdge){
         selEdge = currentEdge;
-        console.log(selEdge);
+        //console.log(selEdge);
     }
 
     function findDocumentCoords(mouseEvent){

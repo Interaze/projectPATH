@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="../StyleSheets/UI.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body onresize="setDimensions()" onload="setDimensions()">
+<body onresize="setDimensions()" onload="setDimensions();">
 
     <div class="modal fade" tabindex="-1" role="dialog" id="logIn">
         <div class="modal-dialog modal-dialog-centered" role="document">
@@ -47,7 +47,7 @@
             </div>
         </div>
     </div>
-    <div class="modal fade" tabindex="-1" role="dialog" id="signUp">
+    <div class="modal fade overflow-auto" tabindex="-1" role="dialog" id="signUp">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -55,23 +55,32 @@
                 </div>
             <div class="modal-body">
 
-            <form>
+            <form action="" method="post" onsubmit="Submit(&quot../Processes/SignUp.php&quot,&quot#formSignUp&quot);" id="formSignUp">
+            <div class="form-group col-md-6 col-sm-12 m-auto float-left p-0 pb-3">
+                <label for="userName">First Name</label>
+                <input type="text" class="form-control redFocus" name="FirstName" aria-describedby="FirstName" placeholder="First Name" id="firstSignup" required>
+            </div>
+            <div class="form-group col-md-6 col-sm-12 m-auto float-left p-0 pb-3">
+                <label for="userName">Last Name</label>
+                <input type="text" class="form-control redFocus" name="LastName" aria-describedby="LastName" placeholder="Last Name" id="lastSignup" required>
+            </div>
             <div class="form-group">
                 <label for="userName">Username</label>
-                <input type="text" class="form-control redFocus" name="Username" id="userSignup" aria-describedby="userName" placeholder="Username" required>
+                <input type="text" class="form-control redFocus" name="UserName" id="userSignup" aria-describedby="userName" placeholder="Username" required>
             </div>
             <div class="form-group">
                 <label for="Email">Email address</label>
                 <input type="email" class="form-control redFocus" name="Email" id="Email" aria-describedby="email" placeholder="Enter email" required>
-                <small id="emailDescription" class="form-text text-muted">Your email will only be used on this site.</small>
+                <small id="emailSignup" class="form-text text-muted">Your email will only be used on this site.</small>
             </div>
+            <hr>
             <div class="form-group">
                 <label for="exampleInputPassword1">Password</label>
-                <input type="password" class="form-control redFocus" name="Password" id="exampleInputPassword1" placeholder="Password" required>
+                <input type="password" class="form-control redFocus" name="Password" id="passwordSignup" placeholder="Password" required>
             </div>
             <div class="form-group">
                 <label for="Confirmation">Confirm Password</label>
-                <input type="password" class="form-control redFocus" name="Confirmation" id="Confirmation" placeholder="Confirm Password">
+                <input type="password" class="form-control redFocus" name="Confirmation" id="confirmSignup" placeholder="Confirm Password">
             </div>
 
             </div>
@@ -85,43 +94,42 @@
     </div>
 
     <nav class="navbar navbar-expand-sm navbar-dark bg-primary sticky-top p-0">
+        <button class="navbar-toggler ml-3" type="button" data-toggle="collapse" data-target="#nav-content" aria-controls="nav-content" aria-expanded="true" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-    <button class="navbar-toggler ml-3" type="button" data-toggle="collapse" data-target="#nav-content" aria-controls="nav-content" aria-expanded="true" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+        <!-- Brand -->
+        <a class="navbar-brand p-2 m-0" href="javascript:void(0);"><img class="logo" src="../Images/logo.svg"></img></a>
 
-    <!-- Brand -->
-    <a class="navbar-brand p-2 m-0" href="javascript:void(0);"><img class="logo" src="../Images/logo.svg"></img></a>
+        <!-- Links -->
+        <div class="navbar-collapse collapse w-100 dual-collapse2 order-1 order-md-0" id="nav-content">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link pl-4 pr-4 pt-4 pb-4 text-decoration-none" href="javascript:void(0);">Build a Graph</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link pl-4 pr-4 pt-4 pb-4 text-decoration-none dropdown-toggle" href="javascript:void(0);" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Learn an Algorithm</a>
 
-    <!-- Links -->
-    <div class="navbar-collapse collapse w-100 dual-collapse2 order-1 order-md-0" id="nav-content">
-      <ul class="navbar-nav">
-        <li class="nav-item active">
-          <a class="nav-link pl-4 pr-4 pt-4 pb-4 text-decoration-none" href="javascript:void(0);">Build a Graph</a>
-        </li>
-        <li class="nav-item dropdown">
-            <a class="nav-link pl-4 pr-4 pt-4 pb-4 text-decoration-none dropdown-toggle" href="javascript:void(0);" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Learn an Algorithm</a>
-
-            <div class="dropdown-menu border-0 rounded-0 bg-primary text-secondary" aria-labelledby="dropdownMenuButton">
-              <a class="dropdown-item rounded-0 bg-primary text-secondary font-weight-bold disabled"><u>Path Finding</u></a>
-              <a class="dropdown-item rounded-0 bg-primary text-decoration-none text-secondary" href="#">BFS</a>
-              <a class="dropdown-item rounded-0 bg-primary text-decoration-none text-secondary" href="#">DFS</a>
-              <div class="dropdown-divider background-color-warning"></div>
-              <a class="dropdown-item rounded-0 bg-primary text-secondary font-weight-bold disabled"><u>Tree Sorting</u></a>
-              <a class="dropdown-item rounded-0 bg-primary text-decoration-none text-secondary" href="#">Prim's</a>
-              <a class="dropdown-item rounded-0 bg-primary text-decoration-none text-secondary" href="#">Kruskal's</a>
-            </div>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link pl-4 pr-4 pt-4 pb-4 text-decoration-none" href="javascript:void(0);">About</a>
-        </li>
-      </ul>
-      <ul class="navbar-nav ml-auto dual-collapse2 order-2 order-md-2">
-          <li class="nav-item">
-              <a class="nav-link pl-4 pr-4 pt-4 pb-4 text-decoration-none" data-toggle="modal" data-target="#logIn">Log In</a>
-          </li>
-      </ul>
-    </div>
+                <div class="dropdown-menu border-0 rounded-0 bg-primary text-secondary" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item rounded-0 bg-primary text-secondary font-weight-bold disabled"><u>Path Finding</u></a>
+                  <a class="dropdown-item rounded-0 bg-primary text-decoration-none text-secondary" href="#">BFS</a>
+                  <a class="dropdown-item rounded-0 bg-primary text-decoration-none text-secondary" href="#">DFS</a>
+                  <div class="dropdown-divider background-color-warning"></div>
+                  <a class="dropdown-item rounded-0 bg-primary text-secondary font-weight-bold disabled"><u>Tree Sorting</u></a>
+                  <a class="dropdown-item rounded-0 bg-primary text-decoration-none text-secondary" href="#">Prim's</a>
+                  <a class="dropdown-item rounded-0 bg-primary text-decoration-none text-secondary" href="#">Kruskal's</a>
+                </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link pl-4 pr-4 pt-4 pb-4 text-decoration-none" href="javascript:void(0);">About</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav ml-auto dual-collapse2 order-2 order-md-2">
+              <li class="nav-item">
+                  <a class="nav-link pl-4 pr-4 pt-4 pb-4 text-decoration-none" data-toggle="modal" data-target="#logIn">Log In</a>
+              </li>
+          </ul>
+        </div>
     </nav>
 
     <div class="options position-fixed">
@@ -210,6 +218,7 @@
     </div>
 
     <svg id="diagram"></svg>
+    <div id="testLanding"></div>
 
     <script src="https://d3js.org/d3.v4.min.js" type="text/javascript"></script>
     <script src="https://d3js.org/d3-selection-multi.v1.js"></script>
@@ -217,5 +226,6 @@
     //http://techslides.com/save-svg-as-an-image
     </script>
     <script src="../JavaScript/Modals.js" type="text/javascript"></script>
+    <script src="../JavaScript/Forms.js" type="text/javascript"></script>
 </body>
 </html>
