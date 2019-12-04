@@ -3,6 +3,9 @@
     <title>Build A Graph</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Sketch out your own Graph.">
+    <meta name="keywords" content="Graph Building,Algorithms,SandBox,D3.js,HTML,CSS,JS">
+    <meta name="author" content="Christopher Scully">
 
     <link rel="stylesheet" href="../StyleSheets/MainStyle.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -38,7 +41,7 @@
                 </div>
                 </div>
                 <div class="modal-footer d-block w-100">
-                    <button type="button" class="btn btn-danger float-left" onclick="logOut(&quot;../Processes/LogOut.php&quot;)">Log Out</button>
+                    <button type="button" class="btn btn-danger float-left" onclick="logOut(&quot;../Processes/LogOut.php&quot;);SignInStatus(&quot;../Processes/SignInStatus.php&quot;)">Log Out</button>
                     <button type="button" class="btn btn-secondary float-right" data-dismiss="modal">Cancel</button>
                     <button type="submit" class="btn btn-primary float-right">Apply Changes</button>
                 </div>
@@ -50,7 +53,7 @@
     <div class="modal fade" tabindex="-1" role="dialog" id="logIn">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
-                <form action="" method="post" onsubmit="SignIn(&quot;../Processes/SignIn.php&quot;)" id="formSignIn">
+                <form action="" method="post" onsubmit="SignIn(&quot;../Processes/SignIn.php&quot;);SignInStatus(&quot;../Processes/SignInStatus.php&quot;)" id="formSignIn">
                 <div class="modal-header">
                     <h2 class="modal-title">Log In</h2>
                 </div>
@@ -77,7 +80,7 @@
     <div class="modal fade overflow-auto" tabindex="-1" role="dialog" id="signUp">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
-                <form action="" method="post" onsubmit="SignUp(&quot;../Processes/SignUp.php&quot;);" id="formSignUp">
+                <form action="" method="post" onsubmit="SignUp(&quot;../Processes/SignUp.php&quot;);SignInStatus(&quot;../Processes/SignInStatus.php&quot;)" id="formSignUp">
                 <div class="modal-header">
                     <h2 class="modal-title">Sign Up</h2>
                 </div>

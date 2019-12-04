@@ -46,9 +46,15 @@ function SignIn(str) {
 
 function SignInStatus(str){
     //"../Processes/SignInStatus.php"
+    if(str.includes("../")){
+        var str = "../Processes/SignInStatus.php";
+    }
+    else{
+        var str = "Processes/SignInStatus.php";
+    }
     $.ajax({
         type: 'POST',
-        url: "../Processes/SignInStatus.php",
+        url: str,
         data: "",
         success: function (data) {
             var obj = jQuery.parseJSON(data)
@@ -80,7 +86,9 @@ function logOut(str){
             if(!obj.Error == '0' && !obj.isSignedOut == 'true'){
                 alert('Error: ' . obj.msg);
             }
-            SignInStatus(str);
+            else{
+                SignInStatus(str);
+            }
         }
     });
 }

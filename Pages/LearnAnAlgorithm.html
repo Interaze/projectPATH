@@ -1,16 +1,20 @@
 <html lang="en">
 <head>
-  <title>Learn: </title>
+    <title>Learn: </title>
 
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="../StyleSheets/MainStyle.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-  <link rel="stylesheet" href="../StyleSheets/UI.css">
-  <link rel="stylesheet" href="../StyleSheets/custom-css-bootstrap-magic-2019-11-09.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="Graph Building,Algorithms,SandBox,D3.js,HTML,CSS,JS,">
+    <meta name="author" content="">
+
+    <link rel="stylesheet" href="../StyleSheets/MainStyle.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="stylesheet" href="../StyleSheets/UI.css">
+    <link rel="stylesheet" href="../StyleSheets/custom-css-bootstrap-magic-2019-11-09.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <style>
         .text-pale{
@@ -25,9 +29,9 @@
         }
     </style>
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </head>
 <body onload="SignInStatus(&quot;../Processes/SignInStatus.php&quot;);">
 
@@ -49,7 +53,7 @@
                 </div>
                 </div>
                 <div class="modal-footer d-block w-100">
-                    <button type="button" class="btn btn-danger float-left" onclick="logOut(&quot;../Processes/LogOut.php&quot;)">Log Out</button>
+                    <button type="button" class="btn btn-danger float-left" onclick="logOut(&quot;../Processes/LogOut.php&quot;);SignInStatus(&quot;../Processes/SignInStatus.php&quot;)">Log Out</button>
                     <button type="button" class="btn btn-secondary float-right" data-dismiss="modal">Cancel</button>
                     <button type="submit" class="btn btn-primary float-right">Apply Changes</button>
                 </div>
@@ -61,7 +65,7 @@
     <div class="modal fade" tabindex="-1" role="dialog" id="logIn">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
-                <form action="" method="post" onsubmit="SignIn(&quot;../Processes/SignIn.php&quot;)" id="formSignIn">
+                <form action="" method="post" onsubmit="SignIn(&quot;../Processes/SignIn.php&quot;);SignInStatus(&quot;../Processes/SignInStatus.php&quot;)" id="formSignIn">
                 <div class="modal-header">
                     <h2 class="modal-title">Log In</h2>
                 </div>
@@ -88,7 +92,7 @@
     <div class="modal fade overflow-auto" tabindex="-1" role="dialog" id="signUp">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
-                <form action="" method="post" onsubmit="SignUp(&quot;../Processes/SignUp.php&quot;);" id="formSignUp">
+                <form action="" method="post" onsubmit="SignUp(&quot;../Processes/SignUp.php&quot;);SignInStatus(&quot;../Processes/SignInStatus.php&quot;)" id="formSignUp">
                 <div class="modal-header">
                     <h2 class="modal-title">Sign Up</h2>
                 </div>
@@ -173,6 +177,9 @@
         <h1 class="Display-1">Breadth First Search</h1>
         <h3 class="Display-5 m-0"> "This is a Summary of how the algorithm is going to operate within the system, this entry shall range from a word count between 100-200 words for this message count between 100-200 words for this message count between 100-200 words for this message"</h3>
         <h2 class="Display-4 mt-4">-By Christopher Scully</h2>
+        <button class="btn btn-danger mt-3">Try A Demo</button>
+        <button class="btn btn-primary mt-3">Save</button>
+        <button class="btn btn-secondary mt-3">Report</button>
     </div>
     <div class="jumbotron jumbotron-fluid bg-danger mb-0 p-5 text-pale">
         <h1 class="Display-3 font-weight-bold requirements"><u>Require<wbr>ments</u></h1>
@@ -191,13 +198,10 @@
     </div>
     <div class="jumbotron jumbotron-fluid bg-secondary m-0 p-5">
         <h1 class="Display-4 font-weight-bold"><u>Descrip<wbr>tion:</u></h1>
-        <h3 class="Display-5 m-0"> "This is a Summary of how the algorithm is going to operate within the system, this entry shall range from a word count between 100-200 words for this message count between 100-200 words for this message count between 100-200 words for this messageThis is a Summary of how the algorithm is going to operate within the system, this entry shall range from a word count between 100-200 words for this message count between 100-200 words for this message count between 100-200 words for this messageThis is a Summary of how the algorithm is going to operate within the system, this entry shall range from a word count between 100-200 words for this message count between 100-200 words for this message count between 100-200 words for this messageThis is a Summary of how the algorithm is going to operate within the system, this entry shall range from a word count between 100-200 words for this message count between 100-200 words for this message count between 100-200 words for this messageThis is a Summary of how the algorithm is going to operate within the system, this entry shall range from a word count between 100-200 words for this message count between 100-200 words for this message count between 100-200 words for this message"</h3>
-        <h2 class="Display-5 mt-4"><u>Last Updated: Sept, 05, 2019</u></h2>
-    </div>
-    <div class="bg-primary m-0 text-center p-4">
-            <button class="btn btn-danger">Try A Demo</button>
-            <button class="btn btn-secondary">Save</button>
-            <button class="btn btn-primary">Report</button>
+        <h3 class="Display-5 mb-3 m-0"> "This is a Summary of how the algorithm is going to operate within the system, this entry shall range from a word count between 100-200 words for this message count between 100-200 words for this message count between 100-200 words for this messageThis is a Summary of how the algorithm is going to operate within the system, this entry shall range from a word count between 100-200 words for this message count between 100-200 words for this message count between 100-200 words for this messageThis is a Summary of how the algorithm is going to operate within the system, this entry shall range from a word count between 100-200 words for this message count between 100-200 words for this message count between 100-200 words for this messageThis is a Summary of how the algorithm is going to operate within the system, this entry shall range from a word count between 100-200 words for this message count between 100-200 words for this message count between 100-200 words for this messageThis is a Summary of how the algorithm is going to operate within the system, this entry shall range from a word count between 100-200 words for this message count between 100-200 words for this message count between 100-200 words for this message"
+        </h3>
+        <hr>
+        <h2 class="Display-5 mt-3">Last Updated: Sept, 05, 2019</h2>
     </div>
     <footer class="page-footer bg-warning">
         <div class="bg-danger p-3 text-white">

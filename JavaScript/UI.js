@@ -2,6 +2,11 @@
         UI();
     });
 
+    window.addEventListener('beforeunload', (event) => {
+        event.returnValue = `Are you sure you want to leave?`;
+    });
+    //https://dev.to/chromiumdev/sure-you-want-to-leavebrowser-beforeunload-event-4eg5
+
     var svg = d3.select("svg");
 
     var width = document.getElementById("diagram").clientWidth,
