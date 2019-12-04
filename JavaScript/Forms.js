@@ -1,7 +1,8 @@
-function SignUp() {
+function SignUp(str) {
+    //"../Processes/SignUp.php"
     $.ajax({
         type: 'POST',
-        url: "../Processes/SignUp.php",
+        url: str,
         data: $("#formSignUp").serialize(),
         success: function (data) {
             var obj = jQuery.parseJSON(data)
@@ -9,7 +10,7 @@ function SignUp() {
                 alert('Error: ' + obj.msg);
             }
             else if(obj.Error == '0'){
-                SignInStatus()
+                SignInStatus(str)
                 $("#signUp").modal("hide");
                 //alert('Success: ' + obj.msg);
             }
@@ -20,10 +21,11 @@ function SignUp() {
     });
 }
 
-function SignIn() {
+function SignIn(str) {
+    //"../Processes/SignIn.php"
     $.ajax({
         type: 'POST',
-        url: "../Processes/SignIn.php",
+        url: str,
         data: $("#formSignIn").serialize(),
         success: function (data) {
             var obj = jQuery.parseJSON(data)
@@ -32,7 +34,7 @@ function SignIn() {
             }
             else if(obj.Error == '0'){
                 //alert('Success: ' + obj.msg);
-                SignInStatus();
+                SignInStatus(str);
                 $("#logIn").modal("hide");
             }
             else{
@@ -42,7 +44,8 @@ function SignIn() {
     });
 }
 
-function SignInStatus(){
+function SignInStatus(str){
+    //"../Processes/SignInStatus.php"
     $.ajax({
         type: 'POST',
         url: "../Processes/SignInStatus.php",
@@ -50,12 +53,12 @@ function SignInStatus(){
         success: function (data) {
             var obj = jQuery.parseJSON(data)
             if(obj.Error == '0' && obj.isSignedIn == 'true'){
-                alert('Signed In as: ' + obj.UserName);
+                //alert('Signed In as: ' + obj.UserName);
                 $('#userButton').html(obj.UserName);
                 $('#userButton').attr("data-target", "#userForm");
             }
             else{
-                alert('Not Signed In');
+                //alert('Not Signed In');
                 $('#userButton').html("Log In");
                 $('#userButton').attr("data-target", "#logIn");
             }
@@ -66,17 +69,18 @@ function SignInStatus(){
     });
 }
 
-function logOut(){
+function logOut(str){
+    //"../Processes/LogOut.php"
     $.ajax({
         type: 'POST',
-        url: "../Processes/LogOut.php",
+        url: str,
         data: "",
         success: function (data) {
             var obj = jQuery.parseJSON(data)
             if(!obj.Error == '0' && !obj.isSignedOut == 'true'){
                 alert('Error: ' . obj.msg);
             }
-            SignInStatus();
+            SignInStatus(str);
         }
     });
 }

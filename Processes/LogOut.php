@@ -14,5 +14,4 @@
             'isSignedOut' => 'true',
         ]);
     }
-
 ?>

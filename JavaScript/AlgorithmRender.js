@@ -1,0 +1,1 @@
+//AlgoritmRender.js
