@@ -1,4 +1,3 @@
-
     $( "#diagram" ).click(function() {
         UI();
     });
@@ -43,18 +42,31 @@
         .force("charge", d3.forceManyBody())
         .force("center", d3.forceCenter(width / 2, height / 2));
 
-    d3.json("../TestData/test.json", function (error, graph) {
-        if (error) throw error;
+    const urlParams = new URLSearchParams(window.location.search);
+    var desiredGraph = "";
+
+    if(urlParams.has('user') && urlParams.has('graph')){
+        var tempFormat = "../Users/"+urlParams.get('user')+"/"+urlParams.get('graph')+".json";
+        desiredGraph = tempFormat;
+    }
+    else{
+        desiredGraph = "../Default/empty.json"
+    }
+
+    d3.json(desiredGraph, function (error, graph) {
+        //if (error) throw error; removed for default graph functionallity, but held incase of fallback
         GlobalGraph = graph;
         render(graph);
     });
 
+    var attempt = 0;
+
 function render(graph){
-    links = graph.links;
-    nodes = graph.nodes;
-    var promise = new Promise(function(resolve, reject){
-        //console.log(links);
-        //console.log(nodes);
+    let promise = new Promise(function(resolve, reject){
+        links = graph.links;
+        nodes = graph.nodes;
+        console.log(links);
+        console.log(nodes);
         link = svg.selectAll(".link")
             .data(links)
             .enter()
@@ -143,6 +155,26 @@ function render(graph){
             .force('link')
             .links(graph.links);
     });
+
+    promise.then(
+        function(result) {
+            console.log("success");
+        },
+        function(error) {
+            if(attempt < 3){
+                attempt++;
+                alert("failed to find graph, loading default");
+                d3.json("../Default/empty.json", function (error, graph) {
+                    if (error) throw error;
+                    GlobalGraph = graph;
+                    render(graph);
+                });
+            }
+            else{
+                alert("rendering of graph failed, unfortunately the default graph could not be resolved with sufficient time");
+            }
+        }
+    );
 }
 
     function tick() {

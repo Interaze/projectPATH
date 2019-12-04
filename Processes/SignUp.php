@@ -29,20 +29,27 @@
                 if (($conn->query($sql)) !== FALSE) {
                     session_destroy();//eliminates any old sessions
                     session_start();
-                    mkdir('../Users/'.$subUserName.'');
-                    // store session data
-                    $_SESSION['FirstName'] = $subFirstName;
-                    $_SESSION['LastName'] = $subLastName;
-                    $_SESSION['UserName'] = $subUserName;
-                    $_SESSION['Folder'] = '../Users/".$subUserName."';
-                    $_SESSION['isAdmin'] = 0;
+                    if(!mkdir('../Users/'.$subUserName.'')){
+                        echo json_encode([
+                            'msg' => 'Could not allocate of file currently',
+                            'Error' => '1'
+                        ]);
+                    }
+                    else{
+                        // store session data
+                        $_SESSION['FirstName'] = $subFirstName;
+                        $_SESSION['LastName'] = $subLastName;
+                        $_SESSION['UserName'] = $subUserName;
+                        $_SESSION['Folder'] = '../Users/".$subUserName."';
+                        $_SESSION['isAdmin'] = 0;
 
-                    echo json_encode([
-                        'msg' => 'You are now registered as ' . $subUserName,
-                        'firstName' => $_SESSION['FirstName'],
-                        'UserName' => $_SESSION['UserName'],
-                        'Error' => '0'
-                    ]);
+                        echo json_encode([
+                            'msg' => 'You are now registered as ' . $subUserName,
+                            'firstName' => $_SESSION['FirstName'],
+                            'UserName' => $_SESSION['UserName'],
+                            'Error' => '0'
+                        ]);
+                    }
                 }
 
                 else {
