@@ -27,6 +27,7 @@
             $sql = "INSERT INTO `Users` (`PK`, `UserName`, `Email`, `FirstName`, `LastName`, `Password`, `Folder`, `isAdmin`) VALUES (NULL, '".$subUserName."', '".$subEmail."', '".$subFirstName."', '".$subLastName."', '".$subPassword."', '../Users/".$subUserName."', '0');";
 
                 if (($conn->query($sql)) !== FALSE) {
+                    session_start();
                     session_destroy();//eliminates any old sessions
                     session_start();
                     if(!mkdir('../Users/'.$subUserName.'')){

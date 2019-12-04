@@ -25,6 +25,7 @@
                 $resultedSQL = $conn->query($sql);
                 if (($resultedSQL) !== FALSE) {
                     $result = $resultedSQL->fetch_assoc();
+                    session_start();
                     session_destroy();//eliminates any old sessions
                     session_start();
 

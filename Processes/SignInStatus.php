@@ -1,6 +1,6 @@
 <?php
     session_start();
-    if(session_status() == PHP_SESSION_ACTIVE){
+    if($_SESSION['UserName'] != null){
         echo json_encode([
             'msg' => 'You are now Logged in as ' . $_SESSION['UserName'],
             'isSignedIn' => 'true',
