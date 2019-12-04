@@ -18,44 +18,43 @@
     <link rel="stylesheet" href="../StyleSheets/UI.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body onresize="setDimensions()" onload="setDimensions();">
+<body onresize="setDimensions()" onload="setDimensions();SignInStatus();">
 
     <div class="modal fade" tabindex="-1" role="dialog" id="logIn">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
+                <form action="" method="post" onsubmit="SignIn()" id="formSignIn">
                 <div class="modal-header">
                     <h2 class="modal-title">Log In</h2>
                 </div>
-            <div class="modal-body">
+                <div class="modal-body">
+                <div class="form-group">
+                    <label for="userName">Username</label>
+                    <input type="text" class="form-control redFocus" id="userName" aria-describedby="emailHelp" placeholder="Username" name="UserName" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control redFocus" name="Password" id="password" placeholder="Password" required>
+                </div>
+                </div>
+                <div class="modal-footer d-block w-100">
+                    <button type="button" class="btn btn-danger float-left" onclick="showSignUp()">Sign Up</button>
+                    <button type="button" class="btn btn-secondary float-right" data-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-primary float-right">Sign In</button>
+                </div>
+                </form>
+            </div>
 
-            <form>
-            <div class="form-group">
-                <label for="userName">Username</label>
-                <input type="text" class="form-control redFocus" id="userName" aria-describedby="emailHelp" placeholder="Username" required>
-            </div>
-            <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" class="form-control redFocus" id="password" placeholder="Password" required>
-            </div>
-            </div>
-            <div class="modal-footer d-block w-100">
-                <button type="button" class="btn btn-danger float-left" onclick="showSignUp()">Sign Up</button>
-                <button type="button" class="btn btn-secondary float-right" data-dismiss="modal">Cancel</button>
-                <button type="submit" class="btn btn-primary float-right" data-dismiss="modal">Sign In</button>
-            </div>
-            </form>
-            </div>
         </div>
     </div>
     <div class="modal fade overflow-auto" tabindex="-1" role="dialog" id="signUp">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
+                <form action="" method="post" onsubmit="SignUp();" id="formSignUp">
                 <div class="modal-header">
                     <h2 class="modal-title">Sign Up</h2>
                 </div>
             <div class="modal-body">
-
-            <form action="" method="post" onsubmit="Submit(&quot../Processes/SignUp.php&quot,&quot#formSignUp&quot);" id="formSignUp">
             <div class="form-group col-md-6 col-sm-12 m-auto float-left p-0 pb-3">
                 <label for="userName">First Name</label>
                 <input type="text" class="form-control redFocus" name="FirstName" aria-describedby="FirstName" placeholder="First Name" id="firstSignup" required>

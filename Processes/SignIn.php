@@ -1,11 +1,8 @@
 <?php
-    $subFirstName = filter_var($_POST["FirstName"], FILTER_SANITIZE_STRING);
-    $subLastName = filter_var($_POST["LastName"], FILTER_SANITIZE_STRING);
     $subUserName = filter_var($_POST["UserName"], FILTER_SANITIZE_STRING);
-    $subEmail = filter_var($_POST["Email"], FILTER_SANITIZE_STRING);
     $subPassword = filter_var($_POST["Password"], FILTER_SANITIZE_STRING);
 
-    if(!$subFirstName || !$subLastName || !$subUserName || !$subEmail || !$subPassword){
+    if(!$subUserName || !$subPassword){
         echo json_encode([
             'msg' => 'Invalid Data',
             'Error' => '1'
@@ -24,21 +21,22 @@
 
         $sql = "SELECT * FROM Users WHERE UserName='".$subUserName."';";
         if (($rows = $conn->query($sql)) !== FALSE) {
-            $sql = "INSERT INTO `Users` (`PK`, `UserName`, `Email`, `FirstName`, `LastName`, `Password`, `Folder`, `isAdmin`) VALUES (NULL, '".$subUserName."', '".$subEmail."', '".$subFirstName."', '".$subLastName."', '".$subPassword."', '../Users/".$subUserName."', '0');";
-
-                if (($conn->query($sql)) !== FALSE) {
+            $sql = "SELECT * from Users where UserName='".$subUserName."' and Password='".$subPassword."';";
+                $resultedSQL = $conn->query($sql);
+                if (($resultedSQL) !== FALSE) {
+                    $result = $resultedSQL->fetch_assoc();
                     session_destroy();//eliminates any old sessions
                     session_start();
-                    mkdir('../Users/'.$subUserName.'');
+
                     // store session data
-                    $_SESSION['FirstName'] = $subFirstName;
-                    $_SESSION['LastName'] = $subLastName;
-                    $_SESSION['UserName'] = $subUserName;
-                    $_SESSION['Folder'] = '../Users/".$subUserName."';
+                    $_SESSION['FirstName'] = $result["FirstName"];
+                    $_SESSION['LastName'] = $result["LastName"];
+                    $_SESSION['UserName'] = $result["UserName"];
+                    $_SESSION['Folder'] = $result["Folder"];
                     $_SESSION['isAdmin'] = 0;
 
                     echo json_encode([
-                        'msg' => 'You are now registered as ' . $subUserName,
+                        'msg' => 'You are now Logged in as ' . $_SESSION['UserName'],
                         'firstName' => $_SESSION['FirstName'],
                         'UserName' => $_SESSION['UserName'],
                         'Error' => '0'
@@ -47,14 +45,14 @@
 
                 else {
                     echo json_encode([
-                        'msg' => 'Please choose a different username',
+                        'msg' => 'Sorry, We weren\'t able to log in',
                         'Error' => '1'
                     ]);
                 }
         }
         else {
             echo json_encode([
-                'msg' => 'Can\'t query right now',
+                'msg' => 'Can\'t find Account with that username',
                 'Error' => '1'
             ]);
         }
