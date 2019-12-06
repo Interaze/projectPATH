@@ -10,14 +10,25 @@
     $newJSON = json_encode($data);
 
     if($_SESSION['UserName'] != null){
+        if(!$filename){
+            echo json_encode([
+                'Error' => '1',
+                'isSaved' => false,
+                'isSignedIn' => true,
+                'time' => "Saved at: ".date("h:i:sa"),
+                'msg' => "Invalid File Name"
+            ]);
+            return;
+        }
         $filePath = "../Users/".$_SESSION['UserName']."/".$filename.".json";
         if($myfile = fopen($filePath, "w")){
         fwrite($myfile, $newJSON);
         fclose($myfile);
         echo json_encode([
             'Error' => '0',
-            'isSaved' => 'true',
-            'time' => date("h:i:sa"),
+            'isSaved' => true,
+            'isSignedIn' => true,
+            'time' => "Saved at: ".date("h:i:sa"),
             'msg' => $filePath
         ]);
         }

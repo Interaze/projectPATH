@@ -472,10 +472,8 @@ function render(graph){
     //Mouse Coordinates By: https://nerdparadise.com/programming/javascriptmouseposition
 
     function callSave(){
-        var name = document.getElementById("fileName").value;
-        GlobalGraph.storage[0] = name;
-        //console.log(JSON.stringify(GlobalGraph));
-        save(name,GlobalGraph);
+        GlobalGraph.storage[0] = document.getElementById("fileName").value;
+        save(GlobalGraph.storage[0],GlobalGraph);
     }
 
     function save(name,rec){
@@ -492,40 +490,19 @@ function render(graph){
         for(var j = 0; j < rec.links.length; j++){
             newref.links[j].source = rec.links[j].source.name;
             newref.links[j].target = rec.links[j].target.name;
-            newref.links[j].type = rec.links[j].type.name;
         }
         newref.storage[0] = name;
 
         console.log(newref);
-/*
-        var newGraph = {"nodes": [], "links": [], "storage": []};
-        var i;
-        for(i = 0; i < rec.nodes.length; i++){
-            var tempNode = {};
-            newGraph.nodes[i].name = i;
-            newGraph.nodes[i].label = rec.nodes[i].label;
-            newGraph.nodes[i].id = i;
-            newGraph.nodes[i].fx = rec.nodes[i].fx;
-            newGraph.nodes[i].fy = rec.nodes[i].fy;
-            newGraph.nodes[i].sticky = true;
-        }
-        for(i = 0; i < rec.links.length; i++){
-            newGraph.links[i].source = rec.links[i].source.name;
-            newGraph.links[i].target = rec.links[i].target.name;
-            newGraph.links[i].type = rec.links[i].type;
-        }
-            newGraph.storage[0] = name;
-            console.log(newGraph);
-            */
+
         $.ajax({
             type: 'POST',
             url: "../Processes/Save.php",
             data: {hailmary: JSON.stringify(newref)},
             success: function (data) {
                 var obj = jQuery.parseJSON(data)
-                if(obj.Error == '0' && obj.isSaved == 'true'){
-                    //$("#saveResponse").html("Saved at: " + obj.time);
-                    $("#saveResponse").html(obj.msg);
+                if(obj.Error == '0' && obj.isSaved == true && obj.isSignedIn == true){
+                    $("#saveResponse").html(obj.time);
                 }
                 else{
                     if(obj.isSignedIn == 'false'){

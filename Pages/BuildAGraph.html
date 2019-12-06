@@ -27,7 +27,7 @@
             <div class="modal-content">
                 <form action="" method="post" onsubmit="callSave()" id="formGraphSave">
                 <div class="modal-header">
-                    <h2 class="modal-title text-center w-100">Settings</h2>
+                    <h2 class="modal-title text-center w-100">Save Your Graph</h2>
                 </div>
                 <div class="modal-body">
                 <div class="form-group">
@@ -48,22 +48,16 @@
             <div class="modal-content">
                 <form action="" method="post" onsubmit="changeSettings()" id="formSignIn">
                 <div class="modal-header">
-                    <h2 class="modal-title text-center w-100">Settings</h2>
+                    <h2 class="modal-title text-center w-100">UserConsole</h2>
                 </div>
                 <div class="modal-body">
-                <div class="form-group">
-                    <label for="userName">Username</label>
-                    <input type="text" class="form-control redFocus" id="userName" aria-describedby="emailHelp" placeholder="Username" name="UserName" required>
-                </div>
-                <div class="form-group">
-                    <label for="password">Password</label>
-                    <input type="password" class="form-control redFocus" name="Password" id="password" placeholder="Password" required>
+                <div class="form-group" id="delGraphs">
+                    <button type="button" class="btn btn-danger" onclick="">Log Out</button>
                 </div>
                 </div>
                 <div class="modal-footer d-block w-100">
                     <button type="button" class="btn btn-danger float-left" onclick="logOut(&quot;../Processes/LogOut.php&quot;);SignInStatus(&quot;../Processes/SignInStatus.php&quot;)">Log Out</button>
                     <button type="button" class="btn btn-secondary float-right" data-dismiss="modal">Cancel</button>
-                    <button type="submit" class="btn btn-primary float-right">Apply Changes</button>
                 </div>
                 </form>
             </div>
@@ -227,15 +221,15 @@
 
     </div>
 
-    <div class="algorithm position-fixed">
+    <div class="algorithm position-fixed d-none d-md-block">
         <div class="card">
             <div class="card-header">
                 Testing Console
             </div>
             <div class="card-body">
-                <h5 class="card-title">Special title treatment</h5>
-                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                <select class="form-control form-control mb-2">
+                <h5 class="card-title">Running an Algorithm</h5>
+                <p class="card-text">In the future, I intend to establish running algorithms and animating them, for right now, I haw the graph interface established.</p>
+                <select class="form-control form-control mb-2" disabled="disabled">
                     <option>Select an Algorithm</option>
                     <option disabled>───General Traversal───</option>
                     <option>BFS</option>
@@ -257,11 +251,12 @@
             </div>
             <div class="card-body requirements overflow-auto" id="Requirements">
                 <h5 class="card-title mb-1 font-underline"><u>Current Requirements:</u></h5>
-                <p><span class="icon fa fa-check-circle"></span> Is Acyclic</p>
+                <p><span class="icon fa fa-question-circle"></span> No Algorithm Selected</p>
+                <!--<p><span class="icon fa fa-check-circle"></span> Is Acyclic</p>
                 <p><span class="icon fa fa-times"></span> Is a directed graph</p>
                 <p><span class="icon fa fa-question-circle"></span> Is something</p>
                 <p><span class="icon fa fa-times"></span> Is a directed graph</p>
-                <p><span class="icon fa fa-question-circle"></span> Is something</p>
+                <p><span class="icon fa fa-question-circle"></span> Is something</p>-->
             </div>
         </div>
     </div>
