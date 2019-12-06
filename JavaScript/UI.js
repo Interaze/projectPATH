@@ -470,3 +470,72 @@ function render(graph){
     document.getElementById("diagram").onmousemove = findDocumentCoords;
 
     //Mouse Coordinates By: https://nerdparadise.com/programming/javascriptmouseposition
+
+    function callSave(){
+        var name = document.getElementById("fileName").value;
+        GlobalGraph.storage[0] = name;
+        //console.log(JSON.stringify(GlobalGraph));
+        save(name,GlobalGraph);
+    }
+
+    function save(name,rec){
+        var newref = JSON.parse(JSON.stringify(GlobalGraph));;
+        console.log(newref);
+        for(var i = 0; i < rec.nodes.length; i++){
+            delete newref.nodes[i].vx;
+            delete newref.nodes[i].vy;
+            delete newref.nodes[i].x;
+            delete newref.nodes[i].y;
+            delete newref.nodes[i].index;
+        }
+        console.log(newref);
+        for(var j = 0; j < rec.links.length; j++){
+            newref.links[j].source = rec.links[j].source.name;
+            newref.links[j].target = rec.links[j].target.name;
+            newref.links[j].type = rec.links[j].type.name;
+        }
+        newref.storage[0] = name;
+
+        console.log(newref);
+/*
+        var newGraph = {"nodes": [], "links": [], "storage": []};
+        var i;
+        for(i = 0; i < rec.nodes.length; i++){
+            var tempNode = {};
+            newGraph.nodes[i].name = i;
+            newGraph.nodes[i].label = rec.nodes[i].label;
+            newGraph.nodes[i].id = i;
+            newGraph.nodes[i].fx = rec.nodes[i].fx;
+            newGraph.nodes[i].fy = rec.nodes[i].fy;
+            newGraph.nodes[i].sticky = true;
+        }
+        for(i = 0; i < rec.links.length; i++){
+            newGraph.links[i].source = rec.links[i].source.name;
+            newGraph.links[i].target = rec.links[i].target.name;
+            newGraph.links[i].type = rec.links[i].type;
+        }
+            newGraph.storage[0] = name;
+            console.log(newGraph);
+            */
+        $.ajax({
+            type: 'POST',
+            url: "../Processes/Save.php",
+            data: {hailmary: JSON.stringify(newref)},
+            success: function (data) {
+                var obj = jQuery.parseJSON(data)
+                if(obj.Error == '0' && obj.isSaved == 'true'){
+                    //$("#saveResponse").html("Saved at: " + obj.time);
+                    $("#saveResponse").html(obj.msg);
+                }
+                else{
+                    if(obj.isSignedIn == 'false'){
+                        $("#saveResponse").html("Save Failed: Need to Login");
+                    }
+                    else{
+                        $("#saveResponse").html("Save Failed: " + obj.msg);
+                    }
+                }
+                $("#graphSave").modal('hide');
+            }
+        });
+    }

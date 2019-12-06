@@ -1,20 +1,19 @@
 {
     "Requirements": [
-    {
-        "is Acyclic": "required",
-        "is Directed": "required",
-        "Not Weighted": "required",
-        "Less Than 20 Nodes": "recommended"
-    }
+        {"required":"is Acyclic"},
+        {"required":"is Directed"},
+        {"required":"Not Weighted"},
+        {"recommended":"Less Than 20 Nodes"}
     ],
     "Display": [
     {
         "Title": "BFS",
         "Author": "Christopher Scully",
-        "Summary": "required",
-        "Details": "required",
-        "Less Than 20 Nodes": "recommended",
-        "Default Graph": "www.birdisthework1.com"
+        "Summary": "Breadth First Traversal (or Search) for a graph is similar to Breadth First Traversal of a tree (See method 2 of this post). The only catch here is, unlike trees, graphs may contain cycles, so we may come to the same node again. To avoid processing a node more than once, we use a boolean visited array. For simplicity, it is assumed that all vertices are reachable from the starting vertex.",
+        "Details": "Once we’ve chosen a starting point for our search, we have one major thing out of the way. The process of actually searching by breadth in a graph can be boiled down to a few steps, which we’ll continue to repeat again and again, until we have no more nodes left to check. The backbone of a breadth-first graph traversal consists of these basic steps: Add a node/vertex from the graph to a queue of nodes to be visited. Visit the topmost node in the queue, and mark it as such. If that node has any neighbors, check to see if they have been visited or not. Add any neighboring nodes that still need to be visited to the queue. Remove the node we’ve visited from the queue. These five steps are continually repeated for every node in the graph, until we have no more nodes left to check in our queue.",
+        "Video": "https://www.youtube.com/embed/umZ_KdcXRAQ",
+        "DefaultGraph": "www.birdisthework1.com",
+        "Updated": "September 23, 2019"
     }
     ],
     "Links": [

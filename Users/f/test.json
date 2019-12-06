@@ -62,5 +62,9 @@
       "target": 4,
       "type": "test"
     }
+  ],
+  "storage": [
+     "test.json",
+     "f"
   ]
 }
