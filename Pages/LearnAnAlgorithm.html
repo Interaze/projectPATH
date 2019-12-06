@@ -45,11 +45,11 @@
                 <div class="modal-body">
                 <div class="form-group">
                     <label for="userName">Username</label>
-                    <input type="text" class="form-control redFocus" id="userName" aria-describedby="emailHelp" placeholder="Username" name="UserName" required>
+                    <input type="text" class="form-control redFocus" id="userNameOption" aria-describedby="emailHelp" placeholder="Username" name="UserName" disabled>
                 </div>
                 <div class="form-group">
                     <label for="password">Password</label>
-                    <input type="password" class="form-control redFocus" name="Password" id="password" placeholder="Password" required>
+                    <input type="password" class="form-control redFocus" name="Password" id="passwordOption" placeholder="Password" required>
                 </div>
                 </div>
                 <div class="modal-footer d-block w-100">
@@ -145,11 +145,11 @@
         <!-- Links -->
         <div class="navbar-collapse collapse w-100 dual-collapse2 order-1 order-md-0" id="nav-content">
           <ul class="navbar-nav">
-            <li class="nav-item active">
+            <li class="nav-item">
               <a class="nav-link pl-4 pr-4 pt-4 pb-4 text-decoration-none" href="javascript:void(0);">Build a Graph</a>
             </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link pl-4 pr-4 pt-4 pb-4 text-decoration-none dropdown-toggle" href="javascript:void(0);" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Learn an Algorithm</a>
+            <li class="nav-item active dropdown">
+                <a class="nav-link pl-4 pr-4 pt-4 pb-4 text-decoration-none dropdown-toggle " href="javascript:void(0);" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Learn an Algorithm</a>
 
                 <div class="dropdown-menu border-0 rounded-0 bg-primary text-secondary" aria-labelledby="dropdownMenuButton">
                   <a class="dropdown-item rounded-0 bg-primary text-secondary font-weight-bold disabled"><u>Path Finding</u></a>
@@ -174,34 +174,31 @@
     </nav>
 
     <div class="jumbotron jumbotron-fluid bg-secondary mb-0 p-5">
-        <h1 class="Display-1">Breadth First Search</h1>
-        <h3 class="Display-5 m-0"> "This is a Summary of how the algorithm is going to operate within the system, this entry shall range from a word count between 100-200 words for this message count between 100-200 words for this message count between 100-200 words for this message"</h3>
-        <h2 class="Display-4 mt-4">-By Christopher Scully</h2>
-        <button class="btn btn-danger mt-3">Try A Demo</button>
-        <button class="btn btn-primary mt-3">Save</button>
-        <button class="btn btn-secondary mt-3">Report</button>
+        <h1 class="Display-1" id="algNameSpot">Loading</h1>
+        <h3 class="Display-5 m-0" id="summarySpot"> "Loading"</h3>
+        <h2 class="Display-4 mt-4" id="authorSpot">-Loading</h2>
+        <a href="" class="btn btn-danger mt-3 text-decoration-none" id="graphLinkSpot">Try A Demo</a>
+        <button class="btn btn-primary mt-3" id="saveSpot">Save</button>
+        <button class="btn btn-secondary mt-3" id="reportSpot">Report</button>
     </div>
     <div class="jumbotron jumbotron-fluid bg-danger mb-0 p-5 text-pale">
         <h1 class="Display-3 font-weight-bold requirements"><u>Require<wbr>ments</u></h1>
-        <ul class="requirements"><h1>
-            <li>Has to be a Directed Graph</li>
-            <li>Must be Acyclic</li>
-            <li>Must have no negative weights</li>
-            <li>Will require less then 20 nodes</li>
+        <ul class="requirements"><h1 id="requirementSpot">
+            <li>Loading</li>
         </h1></ul>
     </div>
     <div class="jumbotron jumbotron-fluid bg-primary text-pale pl-3 pr-3 m-0 mt-0">
         <h1 class="Display-2 w-100 pl-5">Video Guide:</h1><br>
             <div class="container col-xs-12 col-sm-11 col-md-10 col-lg-8 padding-zero embed-responsive embed-responsive-16by9">
-                <iframe src="https://www.youtube.com/embed/71UQH7Pr9kU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" class="embed-responsive-item" allowfullscreen></iframe>
+                <iframe src="" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"class="embed-responsive-item" id="videoSpot" allowfullscreen></iframe>
             </div>
     </div>
     <div class="jumbotron jumbotron-fluid bg-secondary m-0 p-5">
         <h1 class="Display-4 font-weight-bold"><u>Descrip<wbr>tion:</u></h1>
-        <h3 class="Display-5 mb-3 m-0"> "This is a Summary of how the algorithm is going to operate within the system, this entry shall range from a word count between 100-200 words for this message count between 100-200 words for this message count between 100-200 words for this messageThis is a Summary of how the algorithm is going to operate within the system, this entry shall range from a word count between 100-200 words for this message count between 100-200 words for this message count between 100-200 words for this messageThis is a Summary of how the algorithm is going to operate within the system, this entry shall range from a word count between 100-200 words for this message count between 100-200 words for this message count between 100-200 words for this messageThis is a Summary of how the algorithm is going to operate within the system, this entry shall range from a word count between 100-200 words for this message count between 100-200 words for this message count between 100-200 words for this messageThis is a Summary of how the algorithm is going to operate within the system, this entry shall range from a word count between 100-200 words for this message count between 100-200 words for this message count between 100-200 words for this message"
+        <h3 class="Display-5 mb-3 m-0" id="detailsSpot"> "Loading"
         </h3>
         <hr>
-        <h2 class="Display-5 mt-3">Last Updated: Sept, 05, 2019</h2>
+        <h2 class="Display-5 mt-3" id="updatedSpot">Last Updated: Loading</h2>
     </div>
     <footer class="page-footer bg-warning">
         <div class="bg-danger p-3 text-white">

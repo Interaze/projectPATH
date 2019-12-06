@@ -5,16 +5,17 @@
         "is Directed": "required",
         "Not Weighted": "required",
         "Less Than 20 Nodes": "recommended"
-    },
+    }
     ],
     "Display": [
     {
         "Title": "BFS",
+        "Author": "Christopher Scully",
         "Summary": "required",
         "Details": "required",
         "Less Than 20 Nodes": "recommended",
-        "Default Graph": "www.birdisthework1.com",
-    },
+        "Default Graph": "www.birdisthework1.com"
+    }
     ],
     "Links": [
     {
@@ -22,6 +23,6 @@
         "secondary": "www.birdisthework2.com",
         "secondary": "www.birdisthework3.com",
         "image": "www.this.png"
-    },
+    }
     ]
 }
