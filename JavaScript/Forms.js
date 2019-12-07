@@ -1,5 +1,5 @@
 function SignUp(str) {
-    //"../Processes/SignUp.php"
+    //"Processes/SignUp.php"
     $.ajax({
         type: 'POST',
         url: str,
@@ -22,7 +22,7 @@ function SignUp(str) {
 }
 
 function SignIn(str) {
-    //"../Processes/SignIn.php"
+
     $.ajax({
         type: 'POST',
         url: str,
@@ -33,7 +33,6 @@ function SignIn(str) {
                 alert('Error: ' + obj.msg);
             }
             else if(obj.Error == '0'){
-                //alert('Success: ' + obj.msg);
                 SignInStatus(str);
                 $("#logIn").modal("hide");
             }
@@ -45,9 +44,9 @@ function SignIn(str) {
 }
 
 function SignInStatus(str){
-    //"../Processes/SignInStatus.php"
-    if(str.includes("../")){
-        var str = "../Processes/SignInStatus.php";
+    //"Processes/SignInStatus.php"
+    if(str.includes("")){
+        var str = "Processes/SignInStatus.php";
     }
     else{
         var str = "Processes/SignInStatus.php";
@@ -78,8 +77,8 @@ function SignInStatus(str){
 }
 
 function pullGraphs(str, usernm){
-    if(str.includes("../")){
-        var str = "../Processes/PullGraphs.php";
+    if(str.includes("")){
+        var str = "Processes/PullGraphs.php";
     }
     else{
         var str = "Processes/PullGraphs.php";
@@ -89,18 +88,18 @@ function pullGraphs(str, usernm){
         url: str,
         data: "",
         success: function (data) {
-            if(str.includes("../")){
-                str = "../Processes/Delete.php";
+            if(str.includes("")){
+                str = "Processes/Delete.php";
             }
             else{
                 str = "Processes/Delete.php";
             }
             var graphLink;
-            if(str.includes("../BuildAGraph.html")){
-                graphLink = "Pages/BuildAGraph.html";
+            if(str.includes("BuildAGraph.php")){
+                graphLink = "BuildAGraph.php";
             }
             else{
-                graphLink = "../Pages/BuildAGraph.html";
+                graphLink = "BuildAGraph.php";
             }
             var obj = jQuery.parseJSON(data)
             console.log(obj);
@@ -136,7 +135,7 @@ function deletethis(str, nme){
 }
 
 function logOut(str){
-    //"../Processes/LogOut.php"
+    //"Processes/LogOut.php"
     $.ajax({
         type: 'POST',
         url: str,

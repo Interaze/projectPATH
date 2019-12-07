@@ -51,11 +51,11 @@
     var desiredGraph = "";
 
     if(urlParams.has('user') && urlParams.has('graph')){
-        var tempFormat = "../Users/"+urlParams.get('user')+"/"+urlParams.get('graph')+".json";
+        var tempFormat = "Users/"+urlParams.get('user')+"/"+urlParams.get('graph')+".json";
         desiredGraph = tempFormat;
     }
     else{
-        desiredGraph = "../Default/empty.json"
+        desiredGraph = "Default/empty.json"
     }
 
     d3.json(desiredGraph, function (error, graph) {
@@ -169,7 +169,7 @@ function render(graph){
             if(attempt < 3){
                 attempt++;
                 alert("failed to find graph, loading default");
-                d3.json("../Default/empty.json", function (error, graph) {
+                d3.json("Default/empty.json", function (error, graph) {
                     if (error) throw error;
                     GlobalGraph = graph;
                     render(graph);
@@ -497,7 +497,7 @@ function render(graph){
 
         $.ajax({
             type: 'POST',
-            url: "../Processes/Save.php",
+            url: "Processes/Save.php",
             data: {hailmary: JSON.stringify(newref)},
             success: function (data) {
                 var obj = jQuery.parseJSON(data)

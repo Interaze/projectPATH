@@ -1,0 +1,1 @@
+{"nodes":[{"name":"1","label":"","id":1,"fx":643,"fy":639,"sticky":true},{"name":"2","label":"","id":2,"fx":400,"fy":300,"sticky":true},{"name":"3","label":"","id":3,"fx":300,"fy":400,"sticky":true}],"links":[{"source":"1","target":"2","type":"test","index":0},{"source":"1","target":"3","type":"test","index":1}],"storage":["newGraph","default"]}
