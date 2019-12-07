@@ -1,0 +1,70 @@
+{
+  "nodes": [
+    {
+      "name": "1",
+      "label": "",
+      "id": 1,
+      "fx": 300,
+      "fy": 300,
+      "sticky": true
+    },
+    {
+      "name": "2",
+      "label": "",
+      "id": 2,
+      "fx": 400,
+      "fy": 300,
+      "sticky": true
+    },
+    {
+      "name": "3",
+      "label": "",
+      "id": 3,
+      "fx": 300,
+      "fy": 400,
+      "sticky": true
+    },
+    {
+      "name": "5",
+      "label": "",
+      "id": 5,
+      "fx": 500,
+      "fy": 300,
+      "sticky": true
+  },
+    {
+      "name": "4",
+      "label": "",
+      "id": 4,
+      "fx": 400,
+      "fy": 400,
+      "sticky": true
+    }
+  ],
+  "links": [
+    {
+      "source": 1,
+      "target": 2,
+      "type": "test"
+    },
+    {
+      "source": 1,
+      "target": 3,
+      "type": "test"
+    },
+    {
+      "source": 2,
+      "target": 3,
+      "type": "test"
+    },
+    {
+      "source": 3,
+      "target": 4,
+      "type": "test"
+    }
+  ],
+  "storage": [
+     "test.json",
+     "f"
+  ]
+}

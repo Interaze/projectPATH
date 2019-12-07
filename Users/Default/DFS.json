@@ -1,0 +1,27 @@
+{
+    "Requirements": [
+        {"required":"is Acyclic"},
+        {"required":"is Directed"},
+        {"required":"Not Weighted"},
+        {"recommended":"Less Than 20 Nodes"}
+    ],
+    "Display": [
+    {
+        "Title": "DFS",
+        "Author": "Christopher Scully",
+        "Summary": "Traversal means visiting all the nodes of a graph. Depth first traversal or Depth first Search is a recursive algorithm for searching all the vertices of a graph or tree data structure.",
+        "Details": "A standard DFS implementation puts each vertex of the graph into one of two categories: Visited, Not Visited. The purpose of the algorithm is to mark each vertex as visited while avoiding cycles. The DFS algorithm works as follows: Start by putting any one of the graph's vertices on top of a stack. Take the top item of the stack and add it to the visited list. Create a list of that vertex's adjacent nodes. Add the ones which aren't in the visited list to the top of stack. Keep repeating steps 2 and 3 until the stack is empty.",
+        "Video": "https://www.youtube.com/embed/umZ_KdcXRAQ",
+        "DefaultGraph": "www.birdisthework1.com",
+        "Updated": "October 23, 2019"
+    }
+    ],
+    "Links": [
+    {
+        "primary": "www.birdisthework1.com",
+        "secondary": "www.birdisthework2.com",
+        "secondary": "www.birdisthework3.com",
+        "image": "www.this.png"
+    }
+    ]
+}
