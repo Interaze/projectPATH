@@ -10,13 +10,15 @@
     }
     else{
         // Create connection
-        $conn = new mysqli("localhost:8889", "FinalBot", "Trym3B30nc3", "Final_Project");
+        $conn = new mysqli("db:3306", "FinalBot", "Trym3B30nc3", "Final_Project");
+
         // Check connection
         if ($conn->connect_error) {
             echo json_encode([
-                'msg' => 'Connection Failed',
+                'msg' => 'Connection Failed: ' . $conn->connect_error,
                 'Error' => '1'
             ]);
+            exit();
         }
 
         $sql = "SELECT * FROM Users WHERE UserName='".$subUserName."';";

@@ -1,5 +1,5 @@
 function SignUp(str) {
-    //"Processes/SignUp.php"
+
     $.ajax({
         type: 'POST',
         url: str,
@@ -135,7 +135,7 @@ function deletethis(str, nme){
 }
 
 function logOut(str){
-    //"Processes/LogOut.php"
+
     $.ajax({
         type: 'POST',
         url: str,
