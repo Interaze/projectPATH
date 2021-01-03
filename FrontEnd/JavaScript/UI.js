@@ -511,7 +511,7 @@ function save(name,rec){
 
     $.ajax({
         type: 'POST',
-        url: "Processes/Save.php",
+        url: "api/Save.php",
         data: {hailmary: JSON.stringify(newref)},
         success: function (data) {
             var obj = jQuery.parseJSON(data)

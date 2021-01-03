@@ -44,12 +44,12 @@ function SignIn(str) {
 }
 
 function SignInStatus(str){
-    //"Processes/SignInStatus.php"
+    //"api/SignInStatus.php"
     if(str.includes("")){
-        var str = "Processes/SignInStatus.php";
+        var str = "api/SignInStatus.php";
     }
     else{
-        var str = "Processes/SignInStatus.php";
+        var str = "api/SignInStatus.php";
     }
     $.ajax({
         type: 'POST',
@@ -78,10 +78,10 @@ function SignInStatus(str){
 
 function pullGraphs(str, usernm){
     if(str.includes("")){
-        var str = "Processes/PullGraphs.php";
+        var str = "api/PullGraphs.php";
     }
     else{
-        var str = "Processes/PullGraphs.php";
+        var str = "api/PullGraphs.php";
     }
     $.ajax({
         type: 'POST',
@@ -89,10 +89,10 @@ function pullGraphs(str, usernm){
         data: "",
         success: function (data) {
             if(str.includes("")){
-                str = "Processes/Delete.php";
+                str = "api/Delete.php";
             }
             else{
-                str = "Processes/Delete.php";
+                str = "api/Delete.php";
             }
             var graphLink;
             if(str.includes("BuildAGraph.php")){

@@ -32,7 +32,7 @@
             </div>
             </div>
             <div class="modal-footer d-block w-100">
-                <button type="button" class="btn btn-danger float-left" onclick="logOut(&quot;Processes/LogOut.php&quot;);SignInStatus(&quot;Processes/SignInStatus.php&quot;)">Log Out</button>
+                <button type="button" class="btn btn-danger float-left" onclick="logOut(&quot;api/LogOut.php&quot;);SignInStatus(&quot;api/SignInStatus.php&quot;)">Log Out</button>
                 <button type="button" class="btn btn-secondary float-right" data-dismiss="modal">Cancel</button>
             </div>
             </form>
@@ -43,7 +43,7 @@
 <div class="modal fade" tabindex="-1" role="dialog" id="logIn">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
-            <form action="" method="post" onsubmit="SignIn(&quot;Processes/SignIn.php&quot;);SignInStatus(&quot;Processes/SignInStatus.php&quot;)" id="formSignIn">
+            <form action="" method="post" onsubmit="SignIn(&quot;api/SignIn.php&quot;);SignInStatus(&quot;api/SignInStatus.php&quot;)" id="formSignIn">
             <div class="modal-header">
                 <h2 class="modal-title">Log In</h2>
             </div>
@@ -70,7 +70,7 @@
 <div class="modal fade overflow-auto" tabindex="-1" role="dialog" id="signUp">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
-            <form action="" method="post" onsubmit="SignUp(&quot;Processes/SignUp.php&quot;);SignInStatus(&quot;Processes/SignInStatus.php&quot;)" id="formSignUp">
+            <form action="" method="post" onsubmit="SignUp(&quot;api/SignUp.php&quot;);SignInStatus(&quot;api/SignInStatus.php&quot;)" id="formSignUp">
             <div class="modal-header">
                 <h2 class="modal-title">Sign Up</h2>
             </div>
@@ -138,7 +138,7 @@
       </ul>
       <ul class="navbar-nav ml-auto dual-collapse2 order-2 order-md-2">
           <li class="nav-item">
-              <a class="nav-link pl-4 pr-4 pt-4 pb-4 text-decoration-none" data-toggle="modal" data-target="#logIn" id="userButton" onclick="SignInStatus(&quot;Processes/SignInStatus.php&quot;);">Log In</a>
+              <a class="nav-link pl-4 pr-4 pt-4 pb-4 text-decoration-none" data-toggle="modal" data-target="#logIn" id="userButton" onclick="SignInStatus(&quot;api/SignInStatus.php&quot;);">Log In</a>
           </li>
       </ul>
     </div>

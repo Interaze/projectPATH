@@ -1,0 +1,4 @@
+FROM php:7.0-fpm
+WORKDIR '/app'
+COPY ./ ./
+RUN for i in *.php; do php -l $i; done
