@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 </head>
-<body onresize="setDimensions()" onload="setDimensions();SignInStatus(&quot;Processes/SignInStatus.php&quot;);">
+<body onresize="setDimensions()" onload="setDimensions();SignInStatus(&quot;api/SignInStatus.php&quot;);">
     <?php include ('navBar.html'); ?>
     <div class="options position-fixed">
     <ul class="list-group list-group-flush btn-group-toggle" data-toggle="buttons">

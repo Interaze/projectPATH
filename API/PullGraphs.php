@@ -4,7 +4,7 @@
         $arr["error"] = 0;
         $arr["isSignedIn"] = true;
         $i = 0;
-        foreach (glob("../Users/".$_SESSION['UserName']."/*.json") as $filename) {
+        foreach (glob("Users/".$_SESSION['UserName']."/*.json") as $filename) {
             $arr[$i] = basename($filename);
             $i++;
         }

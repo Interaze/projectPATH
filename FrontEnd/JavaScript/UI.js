@@ -51,7 +51,7 @@ const urlParams = new URLSearchParams(window.location.search);
 var desiredGraph = "";
 
 if(urlParams.has('user') && urlParams.has('graph')){
-    var tempFormat = "Users/"+urlParams.get('user')+"/"+urlParams.get('graph')+".json?nocache=" + (new Date()).getTime();
+    var tempFormat = "api/Users/"+urlParams.get('user')+"/"+urlParams.get('graph')+".json?nocache=" + (new Date()).getTime();
     desiredGraph = tempFormat;
 }
 else{

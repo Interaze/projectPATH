@@ -3,7 +3,7 @@
 const urlParams = new URLSearchParams(window.location.search);
 
 if(urlParams.has('user') && urlParams.has('algorithm')){
-    var tempFormat = "../Users/"+urlParams.get('user')+"/"+urlParams.get('algorithm')+".json";
+    var tempFormat = "api/Users/"+urlParams.get('user')+"/"+urlParams.get('algorithm')+".json";
 
     $.getJSON(tempFormat, function( data ) {
         console.log(data);

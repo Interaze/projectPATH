@@ -33,7 +33,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </head>
-<body onload="SignInStatus(&quot;Processes/SignInStatus.php&quot;);">
+<body onload="SignInStatus(&quot;api/SignInStatus.php&quot;);">
     <?php include ('navBar.html'); ?>
     <div class="jumbotron jumbotron-fluid bg-secondary mb-0 p-5">
         <h1 class="Display-1" id="algNameSpot">Loading</h1>

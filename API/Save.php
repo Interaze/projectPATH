@@ -20,7 +20,7 @@
             ]);
             return;
         }
-        $filePath = "../Users/".$_SESSION['UserName']."/".$filename.".json";
+        $filePath = "Users/".$_SESSION['UserName']."/".$filename.".json";
         if($myfile = fopen($filePath, "w")){
         fwrite($myfile, $newJSON);
         fclose($myfile);

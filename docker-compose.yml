@@ -71,16 +71,18 @@ services:
     environment:
       MYSQL_ROOT_USER: root
       MYSQL_ROOT_PASSWORD: testcase
-      MYSQL_DATABASE: MU3DPC
       MYSQL_USER: FinalBot
-      MYSQL_PASSWORD: password
+      MYSQL_PASSWORD: Trym3B30nc3
     volumes:
+      - ./SampleDat:/var/lib/mysql
       - ./DB:/scripts
     networks:
       - database
 
 volumes:
-  DB:
+  SampleDat:
+    driver: local
+  db:
     driver: local
 
 networks:
