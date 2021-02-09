@@ -1,2 +1,5 @@
 .vscode/
 settings.json
+GraphDat/
+Graph_DB/
+*.dblwr
