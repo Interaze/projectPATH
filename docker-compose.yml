@@ -14,9 +14,6 @@ services:
     networks:
       - frontend
       - backend
-#    links:
-#      - static_front
-#      - api_route
 
   static_front:
     build:
@@ -27,8 +24,6 @@ services:
       - ./FrontEnd:/code
     networks:
       - frontend
-#   links:
-#      - dynamic_front
 
   dynamic_front:
     build:
@@ -48,8 +43,6 @@ services:
       - ./api:/code
     networks:
       - backend
-#    links:
-#      - api
 
   api:
     build:
@@ -60,13 +53,11 @@ services:
     networks:
       - backend
       - database
-#    links:
-#      - db
 
   db:
     build:
       dockerfile: Dockerfile.dev
-      context: ./DB
+      context: ./User_DB
     command: mysqld --default-authentication-plugin=mysql_native_password
     environment:
       MYSQL_ROOT_USER: root
@@ -75,6 +66,7 @@ services:
       MYSQL_PASSWORD: Trym3B30nc3
     volumes:
       - ./UserDat:/var/lib/mysql
+      - ./User_DB:/scripts
     networks:
       - database
 
@@ -89,6 +81,8 @@ services:
 
 volumes:
   UserDat:
+    driver: local
+  User_DB:
     driver: local
   GraphDat:
     driver: local
