@@ -1,1 +1,1 @@
-FROM redislabs/redisgraph
+FROM redis:alpine

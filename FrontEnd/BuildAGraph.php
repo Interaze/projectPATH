@@ -119,8 +119,7 @@
 
     <script src="https://d3js.org/d3.v4.min.js" type="text/javascript"></script>
     <script src="https://d3js.org/d3-selection-multi.v1.js"></script>
-    <script src="JavaScript/UI.js" type="text/javascript">
-    </script>
+    <script src="JavaScript/UI.js" type="text/javascript"></script>
     <script src="JavaScript/Modals.js" type="text/javascript"></script>
     <script src="JavaScript/Forms.js" type="text/javascript"></script>
 </body>

@@ -1,0 +1,45 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: static-front-service
+  labels:
+    tier: frontend
+spec:
+  selector:
+    app: static-front
+  ports:
+    - name: http
+      protocol: TCP
+      port: 3000
+      targetPort: 3000
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: static-front-deployment
+  labels:
+    app: static-front
+    tier: frontend
+spec:
+  replicas: 10
+  selector:
+    matchLabels:
+      app: static-front
+  template:
+    metadata:
+      labels:
+        app: static-front
+        tier: backend
+    spec:
+      containers:
+        - name: projectpath-static-front-prod
+          image: interaze/projectpath-static-front-prod:latest
+          resources:
+            requests:
+              memory: "64Mi"
+              cpu: "250m"
+            limits:
+              memory: "128Mi"
+              cpu: "500m"
+          ports:
+            - containerPort: 3000

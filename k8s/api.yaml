@@ -1,0 +1,44 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: dynamic-api-service
+  labels:
+    tier: backend
+spec:
+  selector:
+    app: dynamic-api
+  ports:
+    - protocol: TCP
+      port: 9000
+      targetPort: 9000
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dynamic-api-deployment
+  labels:
+    app: dynamic-api
+    tier: backend
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: dynamic-api
+  template:
+    metadata:
+      labels:
+        app: dynamic-api
+        tier: backend
+    spec:
+      containers:
+        - name: projectpath-dynamic-api-prod
+          image: interaze/projectpath-api-prod:latest
+          resources:
+            requests:
+              memory: "64Mi"
+              cpu: "250m"
+            limits:
+              memory: "512Mi"
+              cpu: "1000m"
+          ports:
+            - containerPort: 9000
